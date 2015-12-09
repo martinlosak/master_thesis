@@ -1,0 +1,17 @@
+{
+    "contents" : "processingEnergy <- function(file) {\n  energy <- read.csv(file)\n  energy$TimeUTC[1:5714] <- energy$TimeUTC[1:5714] + 90\n  energy$TimeUTC[5715:13104] <- energy$TimeUTC[5715:13104] + 30\n  energy$TimeUTC[13105:23186] <- energy$TimeUTC[13105:23186] + 90\n  energy$TimeUTC[23187:28610] <- energy$TimeUTC[23187:28610] + 30\n  energy$DateUTC <- as.Date(energy$DateUTC,\"%d/%m/%Y\")\n  write.csv(\n    x = energy,file = \"bratislava/energy2.csv\", quote = FALSE, row.names = FALSE\n  )\n}\nprocessingEnergy(\"bratislava/energy.csv\")\n\nprocessingWeather <- function(file) {\n  weather <- read.csv(file)\n  weather <- weather[-c(5,6,8,9,10,11,12)]\n  weather$TimeUTC <- substr(weather$DateUTC,12,16)\n  weather$TimeUTC <- sapply(strsplit(weather$TimeUTC,\":\"),\n                            function(x) {\n                              x <- as.numeric(x)\n                              x[1] * 78 + x[2]\n                            })\n  weather$DateUTC <- as.Date(weather$DateUTC)\n  weather <- weather[!duplicated(weather[,6:7]) ,]\n  write.csv(\n    x = weather, file = \"bratislava/weather2.csv\", quote = FALSE, row.names = FALSE\n  )\n}\nprocessingWeather(\"bratislava/weather.csv\")\n\nmergeFunc <- function(ene_file, wea_file) {\n  energy <- read.csv(ene_file)\n  weather <- read.csv(wea_file)\n  merged <-\n    merge(energy,weather,c(\"DateUTC\",\"TimeUTC\"),sort = FALSE)\n  write.csv(\n    x = merged,file = \"bratislava/merged.csv\", quote = FALSE, row.names = FALSE\n  )\n}\nmergeFunc(\"bratislava/energy2.csv\", \"bratislava/weather2.csv\")\n\ndecomposeDemand <- function(file) {\n  merged <- read.csv(file)\n\n  ts <- ts(merged$SUM_of_MNOZSTVO, frequency = 96, start = 0)\n  decom <- stl(ts, s.window = \"periodic\", robust = TRUE)\n  \n  ts_temp = data.frame(merged$DateUTC,merged$Temperature_F,decom$time.series[,\"trend\"])\n  \n  write.csv(x = ts_temp, file = \"bratislava/ts_temp.csv\", quote = FALSE, row.names = FALSE)\n  \n}\ndecomposeDemand(\"bratislava/merged.csv\")\n\ndrawGraph <- function(file) {\n  ts_temp <- read.csv(file)\n  #   library(corrplot)\n  #   m <- cor(merged[,2:6])\n  #   corrplot(m, method = \"circle\")\n  \n  #   pairs(merged, panel = panel.smooth)\n  #   plot(merged$Temperature_F, merged$SUM_of_MNOZSTVO, pch = 1, col = \"red\", cex = 0.5,\n  #        xlab = \"Temperature [°F]\", ylab = \"Consumption [MWh]\")\n  #   plot(x = ts_temp$DateUTC, y = ts_temp$decom)\n  #   lines(x = ts_temp$DateUTC, y = ts_temp$Temperature_F)\n\n  x <- ts_temp$DateUTC\n  y1 <- ts_temp$decom\n  y2 <- ts_temp$Temperature_F\n  \n  \n  library(ggplot2)\n  temp_plot = ggplot(ts_temp, aes(x = DateUTC, y = Temperature_F)) + geom_line(colour = \"red\") + xlab(\"Čas\") + ylab(\"Teplota\") + theme_classic()\n  temp_plot\n#   demd_plot = ggplot(ts_temp, aes(x = DateUTC, y = decom)) + geom_line(colour = \"blue\") + xlab(\"Čas\") + ylab(\"Spotreba\") + theme_classic()\n#   demd_plot\n\n#   plot(x, y1, type = \"l\", col = \"blue\", xlab = \"Čas\", ylab = \"Spotreba\")\n#   plot(x, y2, type = \"l\", col = \"red\", xlab = \"Čas\", ylab = \"Teplota\")\n}\ndrawGraph(\"bratislava/ts_temp.csv\")",
+    "created" : 1448021588638.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "0|36|10|0|\n13|37|27|0|\n30|43|38|0|\n",
+    "hash" : "3519254994",
+    "id" : "C7F99065",
+    "lastKnownWriteTime" : 1449660832,
+    "path" : "~/master_thesis/script.R",
+    "project_path" : "script.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
