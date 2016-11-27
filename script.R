@@ -1,4 +1,4 @@
-processingOriginalEnergy <- function(file) {
+processingOriginalEnergy <- function() {
   energy <- read.csv("csv/8_ba_suma.csv")
   energy <- setNames(energy, c("date","time","load"))
   
@@ -70,7 +70,8 @@ processingSHMU <- function(){
   shmu <- read.csv("csv/8_BRATISLAVA.csv")
   shmu <- setNames(shmu, c("date","time","sun","temperature","pressure","wind","humidity","rainfall"))
   i <- 1
-  while(i < 54240) {
+  end <- nrow(shmu)
+  while(i < end) {
     shmu$newtime[i] <- as.character(shmu$time[i])
     shmu$newtime[i+1] <- sapply(strsplit(as.character(shmu$time[i+1]), ":"),
                         function(x) {
@@ -92,6 +93,8 @@ processingSHMU <- function(){
   # vypocet casu z minutovej hodnoty a spojenie s datumom do DATETIME
   shmu$datetime <- paste(as.Date(shmu$date, "%d/%m/%Y"), shmu$newtime, sep = " ")
   shmu$datetime <- as.POSIXct(shmu$datetime, format="%Y-%m-%d %H:%M:%S")
+  # ak je wind NA, je 0
+  shmu$wind[is.na(shmu$wind)] <- 0
   shmu$date <- NULL
   shmu$time <- NULL
   shmu$newtime <- NULL
@@ -112,40 +115,58 @@ insertIntoDB <- function(){
   dbDisconnect(con)
 }
 
-getValues <- function(){
+getValues <- function(from, to){
   library(RMySQL)
   con <- dbConnect(MySQL(),user="root", password="852456",dbname="dp", host="localhost")
-  bratislava <- dbGetQuery(con,"SELECT time,`load`,load_h1,day,holiday,sun,temperature,pressure,wind,humidity,rainfall FROM bratislava WHERE YEAR(datetime) = 2014 AND MONTH(datetime) = 7")
-  return(bratislava)
+  result <- dbGetQuery(con,paste("SELECT datetime,time,`load`,load_h1,day,holiday,sun,temperature,pressure,wind,humidity,rainfall FROM bratislava WHERE DATE(datetime) between '",from,"' AND '",to,"'", sep=""))
+  dbDisconnect(con)
+  result$datetime <- as.POSIXct(result$datetime, format="%Y-%m-%d %H:%M")
+  return(result)
 }
 
-neural <- function() {
-  library(RMySQL)
-  con <- dbConnect(MySQL(),user="root", password="852456",dbname="dp", host="localhost")
-  data <- dbGetQuery(con,"SELECT time,`load`,load_h1,load_h2,load_h3,day,holiday,sun,temperature,pressure,wind,humidity,rainfall FROM bratislava WHERE YEAR(datetime) = 2014 AND MONTH(datetime) = 7")
+data <- getValues('2014-07-01','2014-07-31')
 
-  params = c("time","day","holiday")
+drawPlot <- function(data){
+  library(ggplot2)
+  plot <- ggplot(data, aes(datetime, load)) + geom_line(colour="steelblue",size=1) + ggtitle("Real load for July 2014") + labs(x="Time",y="Load")
+  return(plot)
+}
+
+createNeuralModel <- function(data) {
+  params = c("load_h1","time","day","holiday")
   
-  maxs <- apply(data, 2, max)
-  mins <- apply(data, 2, min)
+  maxs <- apply(data[sapply(data, is.numeric)], 2, max)
+  mins <- apply(data[sapply(data, is.numeric)], 2, min)
   
-  data_scaled <- as.data.frame(scale(data, center = mins, scale = maxs - mins))  # skalujem na interval [0,1]
+  data_scaled <- as.data.frame(scale(data[sapply(data, is.numeric)], center = mins, scale = maxs - mins))  # skalujem na interval [0,1]
   
   train_scaled <- data_scaled[1:2880, ]   # trenovacia mnozina 30 dni
   test_scaled <- data_scaled[2881:2976, ] # testovacia mnozina 31 den
   
   library(neuralnet)
   nn <- neuralnet(paste("load ~", paste(params, collapse = " + ")), data = train_scaled, hidden = c(5), threshold = 0.01, stepmax = 1e+6, algorithm = 'rprop+', learningrate.limit = c(10^(-6), 50), learningrate.factor = list(minus = 0.5, plus = 1.2), err.fct = 'sse', act.fct = "logistic", linear.output = TRUE, lifesign = 'full')
+
+  # plot(test,pr.nn,col='red',main='Real vs predicted NN',pch=18,cex=0.7)
+  # abline(0,1,lwd=2)
+  # legend('bottomright',legend='NN',pch=18,col='red', bty='n')
   
-  plot(nn)
+  return(nn)
+}
+
+computeANN <- function(nn, data){
+  params = c("load_h1","time","day","holiday")
   
+  maxs <- apply(data[sapply(data, is.numeric)], 2, max)
+  mins <- apply(data[sapply(data, is.numeric)], 2, min)
   
+  data_scaled <- as.data.frame(scale(data[sapply(data, is.numeric)], center = mins, scale = maxs - mins))  # skalujem na interval [0,1]
+  
+  train_scaled <- data_scaled[1:2880, ]   # trenovacia mnozina 30 dni
+  test_scaled <- data_scaled[2881:2976, ] # testovacia mnozina 31 den
+  
+  library(neuralnet)
   pr.nn_scaled <- compute(nn, test_scaled[, params])
   pr.nn <- pr.nn_scaled$net.result * (max(data$load) - min(data$load)) + min(data$load)
   test <- (test_scaled$load) * (max(data$load) - min(data$load)) + min(data$load)
   MAPE.nn <- 100 * sum(abs((test - pr.nn) / test)) / nrow(test_scaled)
-  
-  plot(pr.nn,type="l", xlab="Hodina", ylab="Spotreba", col="red")
-  lines(test,col="green")
 }
-neural()
