@@ -17,7 +17,6 @@ shinyServer(function(input, output) {
       corrplot(
         data.corr,
         method = "color",
-        order = "hclust",
         addCoef.col = "black"
       )
     })
@@ -55,6 +54,16 @@ shinyServer(function(input, output) {
     
     output$drawNNPlot <- renderPlot({
       plot(nn, intercept=FALSE, show.weights = FALSE, col.entry="red", col.hidden = "blue", col.out = "green")
+    })
+    
+    output$computedPlot <- renderPlot({
+      computed <- computeANN(nn,data)
+      computedPlot(computed)
+    })
+    
+    output$computedLinePlot <- renderPlot({
+      computed <- computeANN(nn,data)
+      computedLinePlot(computed)
     })
   })
   

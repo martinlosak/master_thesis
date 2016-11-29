@@ -61,6 +61,11 @@ processingOriginalEnergy <- function() {
                 as.Date("2015-01-06")) # krali
   energy$holiday <- ifelse(energy$date %in% holidays, 1, 0)
 
+  energy$season[is.element(month(energy$datetime), c(3,4,5))] <- 1
+  energy$season[is.element(month(energy$datetime), c(6,7,8))] <- 2
+  energy$season[is.element(month(energy$datetime), c(9,10,11))] <- 3
+  energy$season[is.element(month(energy$datetime), c(12,1,2))] <- 4
+  
   energy <- na.omit(energy)
   
   write.csv(x = energy, file = "csv/ba_load.csv", quote = FALSE, row.names = FALSE)
@@ -105,32 +110,26 @@ processingSHMU <- function(){
 insertIntoDB <- function(){
   load <- read.csv("csv/ba_load.csv")
   weather <- read.csv("csv/ba_weather.csv")
-  bratislava <- merge(x = load, y = weather, by = "datetime", all.x = TRUE)
+  merged <- merge(x = load, y = weather, by = "datetime", all.x = TRUE)
   
   library(RMySQL)
   con <- dbConnect(MySQL(),user="root", password="852456",dbname="dp", host="localhost")
   dbSendQuery(con, "DELETE FROM bratislava")
   dbSendQuery(con, "ALTER TABLE bratislava AUTO_INCREMENT = 1")
-  dbWriteTable(con, name="bratislava", value=bratislava, append=TRUE, row.names=FALSE)
+  dbWriteTable(con, name="bratislava", value=merged, append=TRUE, row.names=FALSE)
   dbDisconnect(con)
 }
 
 getValues <- function(from, to){
   library(RMySQL)
   con <- dbConnect(MySQL(),user="root", password="852456",dbname="dp", host="localhost")
-  result <- dbGetQuery(con,paste("SELECT datetime,time,`load`,load_h1,day,holiday,sun,temperature,pressure,wind,humidity,rainfall FROM bratislava WHERE DATE(datetime) between '",from,"' AND '",to,"'", sep=""))
+  result <- dbGetQuery(con,paste("SELECT datetime,time,`load`,load_h1,day,holiday,season,sun,temperature,pressure,wind,humidity,rainfall FROM bratislava WHERE DATE(datetime) between '",from,"' AND '",to,"'", sep=""))
   dbDisconnect(con)
   result$datetime <- as.POSIXct(result$datetime, format="%Y-%m-%d %H:%M")
   return(result)
 }
 
 data <- getValues('2014-07-01','2014-07-31')
-
-drawPlot <- function(data){
-  library(ggplot2)
-  plot <- ggplot(data, aes(datetime, load)) + geom_line(colour="steelblue",size=1) + ggtitle("Real load for July 2014") + labs(x="Time",y="Load")
-  return(plot)
-}
 
 createNeuralModel <- function(data) {
   params = c("load_h1","time","day","holiday")
@@ -145,11 +144,6 @@ createNeuralModel <- function(data) {
   
   library(neuralnet)
   nn <- neuralnet(paste("load ~", paste(params, collapse = " + ")), data = train_scaled, hidden = c(5), threshold = 0.01, stepmax = 1e+6, algorithm = 'rprop+', learningrate.limit = c(10^(-6), 50), learningrate.factor = list(minus = 0.5, plus = 1.2), err.fct = 'sse', act.fct = "logistic", linear.output = TRUE, lifesign = 'full')
-
-  # plot(test,pr.nn,col='red',main='Real vs predicted NN',pch=18,cex=0.7)
-  # abline(0,1,lwd=2)
-  # legend('bottomright',legend='NN',pch=18,col='red', bty='n')
-  
   return(nn)
 }
 
@@ -165,8 +159,40 @@ computeANN <- function(nn, data){
   test_scaled <- data_scaled[2881:2976, ] # testovacia mnozina 31 den
   
   library(neuralnet)
-  pr.nn_scaled <- compute(nn, test_scaled[, params])
-  pr.nn <- pr.nn_scaled$net.result * (max(data$load) - min(data$load)) + min(data$load)
+  predicted_scaled <- compute(nn, test_scaled[, params])
+  predicted <- predicted_scaled$net.result * (max(data$load) - min(data$load)) + min(data$load)
   test <- (test_scaled$load) * (max(data$load) - min(data$load)) + min(data$load)
-  MAPE.nn <- 100 * sum(abs((test - pr.nn) / test)) / nrow(test_scaled)
+  mape <- 100 * sum(abs((test - predicted) / test)) / nrow(test_scaled)
+  
+  output <- data.frame(cbind(data[2881:2976,],predicted))
+  
+  computed <- list("mape" = mape, "data" = output)
+  return(computed)
+}
+
+computed <- computeANN(nn,data)
+
+#
+# PLOTS
+#
+
+drawPlot <- function(data){
+  library(ggplot2)
+  plot <- ggplot(data, aes(datetime, load)) + geom_line(colour="steelblue",size=1) + ggtitle("Real load for July 2014") + labs(x="Time",y="Load")
+  return(plot)
+}
+
+computedPlot <- function(computed){
+  plot <- plot(computed$data$load,computed$data$predicted, xlab="Real load", ylab="Predicted load",col='red',main='Real vs predicted NN',pch=18,cex=0.7)
+  abline(0,1,lwd=2)
+  legend('bottomright',legend='NN',pch=18,col='red', bty='n')
+  
+  return(plot)
+}
+
+computedLinePlot <- function(computed){
+  plot <- plot(computed$data$predicted,type="l", xlab="Hour", ylab="Load", col="red")
+  lines(computed$data$load,col="green")
+  
+  return(plot)
 }

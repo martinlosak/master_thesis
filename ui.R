@@ -17,7 +17,6 @@ shinyUI(fluidPage(
             min = "2013-08-01",
             max = "2015-02-16",
             format = "d.m.yyyy",
-            startview = "year",
             weekstart = 1,
             separator = " to "
           ),
@@ -45,7 +44,6 @@ shinyUI(fluidPage(
                    min = "2013-08-01",
                    max = "2015-02-16",
                    format = "d.m.yyyy",
-                   startview = "year",
                    weekstart = 1,
                    separator = " to "
                  ),
@@ -82,7 +80,7 @@ shinyUI(fluidPage(
                  br()
                  ,
                  conditionalPanel(
-                   condition = "input.nButton == 1",
+                   condition = "input.nButton > 0",
                    sliderInput(
                      "split",
                      "Train/Test split:",
@@ -92,10 +90,15 @@ shinyUI(fluidPage(
                      step = 96
                    ),
                    actionButton("mButton", "Create ANN model")
-                 ),
-                 conditionalPanel(condition = "input.mButton == 1",
-                                  verbatimTextOutput("neural"),
-                                  plotOutput("drawNNPlot"))
+                 )
+                 ,
+                 conditionalPanel(
+                   condition = "input.mButton > 0",
+                   verbatimTextOutput("neural"),
+                   plotOutput("computedPlot"),
+                   plotOutput("computedLinePlot"),
+                   plotOutput("drawNNPlot")
+                 )
                  
                )
              ))
