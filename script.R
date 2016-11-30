@@ -125,11 +125,12 @@ getValues <- function(from, to){
   con <- dbConnect(MySQL(),user="root", password="852456",dbname="dp", host="localhost")
   result <- dbGetQuery(con,paste("SELECT datetime,time,`load`,load_h1,day,holiday,season,sun,temperature,pressure,wind,humidity,rainfall FROM bratislava WHERE DATE(datetime) between '",from,"' AND '",to,"'", sep=""))
   dbDisconnect(con)
+  # result <- read.csv("csv/data.csv")
   result$datetime <- as.POSIXct(result$datetime, format="%Y-%m-%d %H:%M")
   return(result)
 }
 
-data <- getValues('2014-07-01','2014-07-31')
+# data <- getValues('2014-07-01','2014-07-31')
 
 createNeuralModel <- function(data) {
   params = c("load_h1","time","day","holiday")
@@ -170,7 +171,7 @@ computeANN <- function(nn, data){
   return(computed)
 }
 
-computed <- computeANN(nn,data)
+# computed <- computeANN(nn,data)
 
 #
 # PLOTS

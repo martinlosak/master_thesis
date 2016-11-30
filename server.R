@@ -9,10 +9,6 @@ shinyServer(function(input, output) {
     data <- getValues(input$dateRange[1], input$dateRange[2])
     data.corr <- cor(data[sapply(data, is.numeric)])
     
-    output$dateRangeText  <- renderText({
-      paste("Period:", input$dateRange[1], "to", input$dateRange[2])
-    })
-    
     output$corrplot <- renderPlot({
       corrplot(
         data.corr,
@@ -36,14 +32,10 @@ shinyServer(function(input, output) {
     
   })
   
-  observeEvent(input$nButton, {
+  observeEvent(input$nnButton, {
     # right after button click
     data <- getValues(input$nDateRange[1], input$nDateRange[2])
-
-    output$nDateRangeText  <- renderText({
-      paste("Period:", input$nDateRange[1], "to", input$nDateRange[2])
-    })
-    
+  
     output$drawPlot <- renderPlot({
       drawPlot(data)
     })
