@@ -120,21 +120,35 @@ insertIntoDB <- function(){
   dbDisconnect(con)
 }
 
-getValues <- function(from, to){
+getCorrelationValues <- function(from, to){
+  inputs <- c("time","day","holiday","sun","temperature","pressure","wind","humidity","rainfall")
   library(RMySQL)
   con <- dbConnect(MySQL(),user="root", password="852456",dbname="dp", host="localhost")
-  result <- dbGetQuery(con,paste("SELECT datetime,time,`load`,load_h1,day,holiday,season,sun,temperature,pressure,wind,humidity,rainfall FROM bratislava WHERE DATE(datetime) between '",from,"' AND '",to,"'", sep=""))
+  result <- dbGetQuery(con,paste("SELECT `datetime`,`load`,",paste("`",paste(inputs, collapse = "`,`"),"`", sep = "")," FROM bratislava WHERE DATE(datetime) between '",from,"' AND '",to,"'", sep=""))
+  dbDisconnect(con)
+  result$datetime <- as.POSIXct(result$datetime, format="%Y-%m-%d %H:%M")
+  return(result)
+}
+
+getValues <- function(from, to, inputs){
+  library(RMySQL)
+  con <- dbConnect(MySQL(),user="root", password="852456",dbname="dp", host="localhost")
+  result <- dbGetQuery(con,paste("SELECT `datetime`,`load`,",paste("`",paste(inputs, collapse = "`,`"),"`", sep = "")," FROM bratislava WHERE DATE(datetime) between '",from,"' AND '",to,"'", sep=""))
   dbDisconnect(con)
   # result <- read.csv("csv/data.csv")
   result$datetime <- as.POSIXct(result$datetime, format="%Y-%m-%d %H:%M")
   return(result)
 }
 
-# data <- getValues('2014-07-01','2014-07-31')
+inputs <- c("load_h1","time","day","temperature")
+data <- getValues('2014-07-01','2014-07-31', inputs)
 
-createNeuralModel <- function(data) {
-  params = c("load_h1","time","day","holiday")
-  
+correlate <- function(data, method){
+  correlation <- cor(data[sapply(data, is.numeric)], method = method)
+  return (correlation)
+}
+
+createNeuralModel <- function(data, inputs) {
   maxs <- apply(data[sapply(data, is.numeric)], 2, max)
   mins <- apply(data[sapply(data, is.numeric)], 2, min)
   
@@ -144,12 +158,12 @@ createNeuralModel <- function(data) {
   test_scaled <- data_scaled[2881:2976, ] # testovacia mnozina 31 den
   
   library(neuralnet)
-  nn <- neuralnet(paste("load ~", paste(params, collapse = " + ")), data = train_scaled, hidden = c(5), threshold = 0.01, stepmax = 1e+6, algorithm = 'rprop+', learningrate.limit = c(10^(-6), 50), learningrate.factor = list(minus = 0.5, plus = 1.2), err.fct = 'sse', act.fct = "logistic", linear.output = TRUE, lifesign = 'full')
+  nn <- neuralnet(paste("load ~", paste(inputs, collapse = " + ")), data = train_scaled, hidden = c(5), threshold = 0.01, stepmax = 1e+6, algorithm = 'rprop+', learningrate.limit = c(10^(-6), 50), learningrate.factor = list(minus = 0.5, plus = 1.2), err.fct = 'sse', act.fct = "logistic", linear.output = TRUE, lifesign = 'full')
   return(nn)
 }
 
-computeANN <- function(nn, data){
-  params = c("load_h1","time","day","holiday")
+computeANN <- function(nn, data, inputs){
+  # params = c("load_h1","time","day","holiday")
   
   maxs <- apply(data[sapply(data, is.numeric)], 2, max)
   mins <- apply(data[sapply(data, is.numeric)], 2, min)
@@ -160,7 +174,7 @@ computeANN <- function(nn, data){
   test_scaled <- data_scaled[2881:2976, ] # testovacia mnozina 31 den
   
   library(neuralnet)
-  predicted_scaled <- compute(nn, test_scaled[, params])
+  predicted_scaled <- compute(nn, test_scaled[, inputs])
   predicted <- predicted_scaled$net.result * (max(data$load) - min(data$load)) + min(data$load)
   test <- (test_scaled$load) * (max(data$load) - min(data$load)) + min(data$load)
   mape <- 100 * sum(abs((test - predicted) / test)) / nrow(test_scaled)
@@ -184,16 +198,29 @@ drawPlot <- function(data){
 }
 
 computedPlot <- function(computed){
-  plot <- plot(computed$data$load,computed$data$predicted, xlab="Real load", ylab="Predicted load",col='red',main='Real vs predicted NN',pch=18,cex=0.7)
+  plot <- plot(computed$data$load,computed$data$predicted, xlab="Load [kWh]", ylab="Load [kWh]",col='red',main='Real vs fitted load',pch=18,cex=0.7)
   abline(0,1,lwd=2)
-  legend('bottomright',legend='NN',pch=18,col='red', bty='n')
+  legend('bottomright',legend='ANN',pch=18,col='red', bty='n')
   
   return(plot)
 }
 
 computedLinePlot <- function(computed){
-  plot <- plot(computed$data$predicted,type="l", xlab="Hour", ylab="Load", col="red")
+  plot <- plot(computed$data$predicted, type="l", xlab="Time", ylab="Load [kWh]", col="red",main='Real vs fitted load')
   lines(computed$data$load,col="green")
-  
+  legend('topright',legend=c("ANN","Real"),col=c("red","green"), lty=1, bty='n')
+  return(plot)
+}
+
+computedResidualsPlot <- function(computed){
+  library(ggplot2)
+  library(data.table)
+  computed$data$residuals <- computed$data$predicted - computed$data$load
+  plot <- ggplot(data = data.table(Fitted_values = computed$data$predicted, Residuals = computed$data$residuals),
+         aes(Fitted_values, Residuals)) +
+    geom_point(size = 1.7) +
+    geom_smooth() +
+    geom_hline(yintercept = 0, color = "red") +
+    labs(title = "Fitted values vs Residuals")
   return(plot)
 }

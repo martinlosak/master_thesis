@@ -4,10 +4,12 @@ library(corrplot)
 source("script.R")
 
 shinyServer(function(input, output) {
+  
+  ## CORRELATION TAB ##
   observeEvent(input$correlationButton, {
-    # right after button click
-    data <- getValues(input$dateRange[1], input$dateRange[2])
-    data.corr <- cor(data[sapply(data, is.numeric)])
+    data <- getCorrelationValues(input$dateRange[1], input$dateRange[2])
+    # data.corr <- cor(data[sapply(data, is.numeric)])
+    data.corr <- correlate(data,input$corrMethod)
     
     output$corrplot <- renderPlot({
       corrplot(
@@ -33,15 +35,18 @@ shinyServer(function(input, output) {
   })
   
   observeEvent(input$nnButton, {
-    # right after button click
-    data <- getValues(input$nDateRange[1], input$nDateRange[2])
+    data <- getValues(input$nDateRange[1], input$nDateRange[2], input$nInputs)
+    
+    output$debuger <- renderPrint({
+      input$nInputs
+    })
   
     output$drawPlot <- renderPlot({
       drawPlot(data)
     })
 
     output$neural <- renderPrint({
-      nn <<- createNeuralModel(data)
+      nn <<- createNeuralModel(data, input$nInputs)
     })
     
     output$drawNNPlot <- renderPlot({
@@ -49,13 +54,19 @@ shinyServer(function(input, output) {
     })
     
     output$computedPlot <- renderPlot({
-      computed <- computeANN(nn,data)
+      computed <- computeANN(nn,data, input$nInputs)
       computedPlot(computed)
     })
     
     output$computedLinePlot <- renderPlot({
-      computed <- computeANN(nn,data)
+      computed <- computeANN(nn,data, input$nInputs)
       computedLinePlot(computed)
+    })
+    
+    output$computedResidualsPlot <- renderPlot({
+      computed <- computeANN(nn,data, input$nInputs)
+      plot <- computedResidualsPlot(computed)
+      print(plot)
     })
   })
   
