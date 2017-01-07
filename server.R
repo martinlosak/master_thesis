@@ -7,8 +7,8 @@ shinyServer(function(input, output) {
   
   ## CORRELATION TAB ##
   observeEvent(input$correlationButton, {
-    data <- getCorrelationValues(input$dateRange[1], input$dateRange[2])
-    # data.corr <- cor(data[sapply(data, is.numeric)])
+    inputs <- c("time","day","holiday","sun","temperature","pressure","wind","humidity","rainfall")
+    data <- getValues(input$dateRange[1], input$dateRange[2], inputs)
     data.corr <- correlate(data,input$corrMethod)
     
     output$corrplot <- renderPlot({
@@ -27,47 +27,54 @@ shinyServer(function(input, output) {
     hover = TRUE,
     rownames = TRUE,
     digits = 2)
-    
-    output$debug <- renderPrint({
-      head(data)
+  })
+
+  ## GAM ##
+  observeEvent(input$gamButton, {
+    inputs <- c("time","day","holiday","sun","temperature","pressure","wind","humidity","rainfall")
+    data <- getValues(input$nDateRange[1], input$nDateRange[2], inputs)
+       
+    output$gamPlot <- renderPlot({
+      createGamModel(data)
     })
-    
   })
   
+  ## NEURAL NETWORK ##
   observeEvent(input$nnButton, {
     data <- getValues(input$nDateRange[1], input$nDateRange[2], input$nInputs)
-    
-    output$debuger <- renderPrint({
-      input$nInputs
-    })
-  
+       
     output$drawPlot <- renderPlot({
       drawPlot(data)
     })
+    
+    observeEvent(input$nnModelButton, {
+      output$neural <- renderPrint({
+        nn <<- createNeuralModel(data, input$nInputs, input$split)
+        computed <<- computeANN(nn, data, input$nInputs, input$split)
+      })
 
-    output$neural <- renderPrint({
-      nn <<- createNeuralModel(data, input$nInputs)
+      output$mapeBox <- renderValueBox({
+        valueBox(paste(computed$mape, "%", sep = " "), "MAPE", icon = icon("percent"), color = "red")
+      })
+      
+      output$drawNNPlot <- renderPlot({
+        drawNNPlot(nn)
+      })
+      
+      output$computedPlot <- renderPlot({
+        computedPlot(computed)
+      })
+      
+      output$computedLinePlot <- renderPlot({
+        computedLinePlot(computed)
+      })
+      
+      output$computedResidualsPlot <- renderPlot({
+        computedResidualsPlot(computed)
+      })
     })
     
-    output$drawNNPlot <- renderPlot({
-      plot(nn, intercept=FALSE, show.weights = FALSE, col.entry="red", col.hidden = "blue", col.out = "green")
-    })
     
-    output$computedPlot <- renderPlot({
-      computed <- computeANN(nn,data, input$nInputs)
-      computedPlot(computed)
-    })
-    
-    output$computedLinePlot <- renderPlot({
-      computed <- computeANN(nn,data, input$nInputs)
-      computedLinePlot(computed)
-    })
-    
-    output$computedResidualsPlot <- renderPlot({
-      computed <- computeANN(nn,data, input$nInputs)
-      plot <- computedResidualsPlot(computed)
-      print(plot)
-    })
   })
   
 })

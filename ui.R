@@ -56,19 +56,45 @@ body <- dashboardBody(tabItems(
                 collapsible = TRUE,
                 width = 12,
                 tableOutput("corr")
-              ),
-              box(
-                title = "Debug",
-                status = "danger",
-                solidHeader = TRUE,
-                collapsible = TRUE,
-                width = 12,
-                verbatimTextOutput("debug")
               )
             )
           )),
   
   # TAB 2
+  tabItem(tabName = "tabGAM",
+          fluidRow(
+            box(
+              title = "Setup",
+              status = "warning",
+              solidHeader = TRUE,
+              collapsible = TRUE,
+              dateRangeInput(
+                "dateRange",
+                label = "Choose period:",
+                start = "2014-07-01",
+                end = "2014-07-31",
+                min = "2013-08-01",
+                max = "2015-02-16",
+                format = "d.m.yyyy",
+                weekstart = 1,
+                separator = " to "
+              ),
+              actionButton("gamButton", "Analyze")
+            ),
+            conditionalPanel(
+              condition = "input.gamButton > 0",
+              box(
+                title = "GAM plot",
+                width = 12,
+                status = "success",
+                solidHeader = TRUE,
+                collapsible = TRUE,
+                plotOutput("gamPlot")
+              )
+            )
+          )), 
+
+  # TAB 3
   tabItem(
     tabName = "tabNeuralNetwork",
     fluidRow(
@@ -77,6 +103,7 @@ body <- dashboardBody(tabItems(
         status = "warning",
         solidHeader = TRUE,
         collapsible = TRUE,
+
         dateRangeInput(
           "nDateRange",
           label = "Choose period:",
@@ -88,11 +115,11 @@ body <- dashboardBody(tabItems(
           weekstart = 1,
           separator = " to "
         ),
+
         checkboxGroupInput(
           "nInputs",
           label = "Choose inputs to ANN:",
           choices = list(
-            # "p(w,d,h-1)" = "load",
             "p(w,d,h-1)" = "load_h1",
             "p(w,d,h-2)" = "load_h2",
             "p(w,d,h-3)" = "load_h3",
@@ -114,60 +141,68 @@ body <- dashboardBody(tabItems(
           ),
           selected = c("load_h1", "time", "day", "temperature")
         ),
-        actionButton("nnButton", "Analyze")
+        actionButton("nnButton", "Load data")
       ),
       
-      #input period selection
+      # Po stlaceni tlacidla Load data
       conditionalPanel(
         condition = "input.nnButton > 0",
-        ##################################
-        box(verbatimTextOutput("debuger")),
-        ##################################
         box(
-          title = "Plot",
+          title = "Real load",
           status = "primary",
           solidHeader = TRUE,
           collapsible = TRUE,
-          plotOutput("drawPlot")
-        ),
-        box(
-          title = "Model setup",
-          status = "primary",
-          solidHeader = TRUE,
-          collapsible = TRUE,
+          plotOutput("drawPlot"),
           sliderInput(
             "split",
-            "Train/Test split:",
+            "Train / Test split:",
             min = 96,
-            max = nrow(data),
+            max = 2976,
             value = 2880,
             step = 96
           ),
-          actionButton("nnModelButton", "Create ANN model")
+          actionButton("nnModelButton", "Create model")
         )
-      ),
-      
-      # model creation
+      )
+    ),
+
+    # Po stlaceni tlacidla Create Model
+    fluidRow(
       conditionalPanel(
         condition = "input.nnModelButton > 0",
-        
+            
         box(
-          title = "ANN Model creation",
+          title = "Real vs Fitted load",
+          status = "success",
+          solidHeader = TRUE,
+          collapsible = TRUE,
+          plotOutput("computedLinePlot")
+        ),
+        box(
+          title = "Residuals vs Fitted load",
+          status = "success",
+          solidHeader = TRUE,
+          collapsible = TRUE,
+          plotOutput("computedResidualsPlot")
+        ),
+        box(
+          title = "Real vs Fitted load",
+          status = "success",
+          solidHeader = TRUE,
+          collapsible = TRUE,
+          plotOutput("computedPlot")
+        ),
+        box(
+          title = "Model Creation",
           status = "danger",
           solidHeader = TRUE,
           collapsible = TRUE,
           verbatimTextOutput("neural")
         ),
-        
-        tabBox(
-          title = icon("line-chart"),
-          tabPanel("Regression", plotOutput("computedPlot")),
-          tabPanel("Line", plotOutput("computedLinePlot")),
-          tabPanel("Residuals", plotOutput("computedResidualsPlot"))
-        )
+        valueBoxOutput("mapeBox")
       )
     )
   )
 ))
 
-dashboardPage(skin = "green", header, sidebar, body)
+dashboardPage(title="Disclosure of hidden relationships in the energy data", skin = "green", header, sidebar, body)
