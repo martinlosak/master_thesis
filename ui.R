@@ -20,13 +20,19 @@ body <- dashboardBody(tabItems(
               status = "warning",
               solidHeader = TRUE,
               collapsible = TRUE,
+              selectInput(
+                "database",
+                "Choose database:",
+                choices = list("Slovak industry data" = "bratislava",
+                               "Texas residential data" = "texas")
+              ),
               dateRangeInput(
                 "dateRange",
                 label = "Choose period:",
                 start = "2014-07-01",
                 end = "2014-07-31",
                 min = "2013-08-01",
-                max = "2015-02-16",
+                # max = "2015-02-16",
                 format = "d.m.yyyy",
                 weekstart = 1,
                 separator = " to "
@@ -103,7 +109,12 @@ body <- dashboardBody(tabItems(
         status = "warning",
         solidHeader = TRUE,
         collapsible = TRUE,
-
+        selectInput(
+          "nDatabase",
+          "Choose database:",
+          choices = list("Slovak industry data" = "bratislava",
+                         "Texas residential data" = "texas")
+        ),
         dateRangeInput(
           "nDateRange",
           label = "Choose period:",

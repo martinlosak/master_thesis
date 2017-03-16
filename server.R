@@ -7,8 +7,15 @@ shinyServer(function(input, output) {
   
   ## CORRELATION TAB ##
   observeEvent(input$correlationButton, {
-    inputs <- c("time","day","holiday","sun","temperature","pressure","wind","humidity","rainfall")
-    data <- getValues(input$dateRange[1], input$dateRange[2], inputs)
+    if(input$database == "bratislava"){
+      inputs <- c("time","day","holiday","sun","temperature","pressure","wind","humidity","rainfall")
+    }else {
+      inputs <- c("day","holiday","cloud","temperature","pressure","wind","humidity","rainfall","dewpoint")
+    }
+    
+    # 
+    data <- getValues(input$dateRange[1], input$dateRange[2], inputs, input$database)
+    # data <- na.omit(data)
     data.corr <- correlate(data,input$corrMethod)
     
     output$corrplot <- renderPlot({
@@ -32,7 +39,7 @@ shinyServer(function(input, output) {
   ## GAM ##
   observeEvent(input$gamButton, {
     inputs <- c("time","day","holiday","sun","temperature","pressure","wind","humidity","rainfall")
-    data <- getValues(input$nDateRange[1], input$nDateRange[2], inputs)
+    data <- getValues(input$nDateRange[1], input$nDateRange[2], inputs, "bratislava")
        
     output$gamPlot <- renderPlot({
       createGamModel(data)
@@ -41,7 +48,7 @@ shinyServer(function(input, output) {
   
   ## NEURAL NETWORK ##
   observeEvent(input$nnButton, {
-    data <- getValues(input$nDateRange[1], input$nDateRange[2], input$nInputs)
+    data <- getValues(input$nDateRange[1], input$nDateRange[2], input$nInputs, input$nDatabase)
        
     output$drawPlot <- renderPlot({
       drawPlot(data)
