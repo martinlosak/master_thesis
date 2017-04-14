@@ -3,10 +3,10 @@ library(shinythemes)
 library(shinydashboard)
 
 
-header <-
+header =
   dashboardHeader(title = "Disclosure of hidden relationships in the energy data")
 
-sidebar <- dashboardSidebar(sidebarMenu(
+sidebar = dashboardSidebar(sidebarMenu(
   menuItem(
     "Correlation",
     tabName = "tabCorrelation",
@@ -16,7 +16,7 @@ sidebar <- dashboardSidebar(sidebarMenu(
   menuItem("Neural network", tabName = "tabNeuralNetwork", icon = icon("cogs"))
 ))
 
-body <- dashboardBody(tabItems(
+body = dashboardBody(tabItems(
   # TAB 1
   tabItem(tabName = "tabCorrelation",
           fluidRow(
@@ -168,31 +168,11 @@ body <- dashboardBody(tabItems(
         status = "warning",
         solidHeader = TRUE,
         collapsible = TRUE,
-        
-        checkboxGroupInput(
-          "nInputs",
-          label = "Choose inputs to ANN:",
-          choices = list(
-            "p(w,d,h-1)" = "load_h1",
-            "p(w,d,h-2)" = "load_h2",
-            "p(w,d,h-3)" = "load_h3",
-            "p(w,d-1,h)" = "load_d1",
-            "p(w,d-1,h-1)" = "load_d1h1",
-            "p(w,d-1,h-2)" = "load_d1h2",
-            "p(w,d-1,h-3)" = "load_d1h3",
-            "p(w-1,d,h)" = "load_w1",
-            "time" = "time",
-            "day" = "day",
-            "holiday" = "holiday",
-            "season" = "season",
-            "sun" = "sun",
-            "temperature" = "temperature",
-            "pressure" = "pressure",
-            "wind" = "wind",
-            "humidity" = "humidity",
-            "rainfall" = "rainfall"
-          ),
-          selected = c("load_h1", "time", "day", "temperature")
+        selectInput(
+          "nDatabase",
+          "Choose database:",
+          choices = list("Slovak industry data" = "sr_bratislava",
+                         "Texas residential data" = "texas")
         ),
         dateRangeInput(
           "nDateRange",
