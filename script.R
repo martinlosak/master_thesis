@@ -1,5 +1,5 @@
-getValues <- function(from, to, inputs, database){
-  result <- dbGetQuery(con, paste("SELECT `datetime`,`load`,",paste("`",paste(inputs, collapse = "`,`"),"`", sep = "")," FROM ",mapper$table_name," WHERE DATE(datetime) between '",from,"' AND '",to,"'", sep=""))
+getValues <- function(from, to, inputs, dbTable){
+  result <- dbGetQuery(con, paste("SELECT `datetime`,`load`,",paste("`",paste(inputs, collapse = "`,`"),"`", sep = "")," FROM ",dbTable," WHERE DATE(datetime) between '",from,"' AND '",to,"'", sep=""))
   result$datetime <- as.POSIXct(result$datetime, format="%Y-%m-%d %H:%M")
   return(result)
 }
@@ -63,6 +63,31 @@ createGamModel <- function(data){
 # nn <- createNeuralModel(data,inputs,split)
 # computed <- computeANN(nn,data, inputs, split)
 
+regionCorrelationChart <- function(data){
+	library(ggplot2)
+	library(reshape2)
+
+	mdata <- melt(data, id.vars = "key_name")
+
+	plot <- ggplot(mdata, aes(variable, value, fill=key_name)) + geom_bar(stat="identity", position="dodge")
+	return(plot)
+}
+
+drawMultiBarChart <- function(keyNames, variables){
+
+	library(ggplot2)
+	library(reshape2)
+	variables <- c("key_name", variables)
+	variables <- paste(variables, collapse = ",")
+	keyNames <- toString(sprintf("'%s'", keyNames))
+
+	query <- sprintf("SELECT %s FROM slovakia_correlation WHERE key_name IN (%s)", variables, keyNames)
+	corr <- dbGetQuery(con, query)
+	mdat <- melt(corr, id.vars = "key_name")
+
+	plot <- ggplot(mdat, aes(variable, value, fill=key_name)) + geom_bar(stat="identity", position="dodge")
+	return(plot)
+}
 
 drawPlot <- function(data){
   library(ggplot2)

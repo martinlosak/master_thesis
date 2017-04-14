@@ -8,33 +8,44 @@ shinyServer(function(input, output) {
   
   ## CORRELATION TAB ##
   observeEvent(input$correlationButton, {
-    if(input$database == "bratislava"){
+    dbTable <- input$dbTable
+    if(input$dbTable == "sr_bratislava" || input$dbTable == "sr_zilina"){
       inputs <- c("time","day","holiday","sun","temperature","pressure","wind","humidity","rainfall")
-    }else {
+    } else {
       inputs <- c("day","holiday","cloud","temperature","pressure","wind","humidity","rainfall","dewpoint")
     }
     
     # 
-    data <- getValues(input$dateRange[1], input$dateRange[2], inputs, input$database)
+    data <- getValues(input$dateRange[1], input$dateRange[2], inputs, input$dbTable)
     # data <- na.omit(data)
-    data.corr <- correlate(data,input$corrMethod)
+    data.corr <- correlate(data, input$corrMethod)
     
-    output$corrplot <- renderPlot({
+    output$corrplot <- renderPlot(
       corrplot(
-        data.corr,
+        corr = data.corr,
         method = "color",
         addCoef.col = "black"
-      )
-    })
-    
-    output$corr <- renderTable({
-      data.corr
-    },
-    striped = TRUE,
-    bordered = TRUE,
-    hover = TRUE,
-    rownames = TRUE,
-    digits = 2)
+      ))
+  })
+
+  # Region Correlation
+  observeEvent(input$regionCorrelationButton, {
+
+    correlatedRegions <- data.frame()
+
+    for (keyName in input$keyNames){
+      tableName <- getTableName(keyName)
+      data <- getValues(input$dateRange[1], input$dateRange[2], input$variables, tableName)
+      correlatedData <- correlate(data, input$corrMethod)
+      correlatedData <- data.frame(correlatedData)
+      correlatedData$key_name <- keyName
+      correlatedData <- correlatedData[1, 2:ncol(correlatedData)]
+      correlatedRegions <- rbind(correlatedRegions, correlatedData)
+    }
+
+    output$regionCorrelationPlot <- renderPlot({regionCorrelationChart(correlatedRegions) })
+
+    # output$regionCorrelationPlot <- renderPlot({drawMultiBarChart(input$keyNames, input$variables) })
   })
 
   ## GAM ##

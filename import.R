@@ -1,3 +1,21 @@
+processingCzechEnergy <- function() {
+  df <- data.frame(electrometer = integer(), postcode = character(), location = character(), rows = integer(), file = character())
+  
+  files <- list.files(path = "data/cz", full.names = TRUE)
+  for (f in files){
+    print(f)
+    t <-read.csv(f, header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+    electrometer <- as.integer(gsub("[^0-9]", "", t[1, 1]))
+    location <- t[2, 1]
+    postcode <- t[2, 2]
+    rows <- nrow(t) -3
+    newRow <- data.frame(electrometer, postcode, location, rows, f)
+    df <- rbind(df, newRow)
+  }
+}
+
+
+
 processingSlovakEnergy <- function() {
   energy <- read.csv(paste("data/sr/load/",".csv", sep= mapper$energy))
   energy <- setNames(energy, c("date","time","load"))

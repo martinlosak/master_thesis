@@ -3,10 +3,15 @@ library(shinythemes)
 library(shinydashboard)
 
 
-header <- dashboardHeader(title = "Disclosure of hidden relationships in the energy data")
+header <-
+  dashboardHeader(title = "Disclosure of hidden relationships in the energy data")
 
 sidebar <- dashboardSidebar(sidebarMenu(
-  menuItem("Correlation", tabName = "tabCorrelation", icon = icon("bar-chart")),
+  menuItem(
+    "Correlation",
+    tabName = "tabCorrelation",
+    icon = icon("bar-chart")
+  ),
   menuItem("GAM", tabName = "tabGAM", icon = icon("bar-chart")),
   menuItem("Neural network", tabName = "tabNeuralNetwork", icon = icon("cogs"))
 ))
@@ -16,23 +21,75 @@ body <- dashboardBody(tabItems(
   tabItem(tabName = "tabCorrelation",
           fluidRow(
             box(
-              title = "Setup",
+              title = "Correlation plot",
               status = "warning",
               solidHeader = TRUE,
               collapsible = TRUE,
               selectInput(
-                "database",
-                "Choose database:",
-                choices = list("Slovak industry data" = "bratislava",
-                               "Texas residential data" = "texas")
+                inputId = "dbTable",
+                label = "Choose dataset:",
+                choices = list(
+                  "Bratislava - industry data" = "sr_bratislava",
+                  "Zilina - industry data" = "sr_zilina",
+                  "Texas residential data" = "texas"
+                )
               ),
               dateRangeInput(
                 "dateRange",
                 label = "Choose period:",
                 start = "2014-07-01",
                 end = "2014-07-31",
-                min = "2013-08-01",
-                # max = "2015-02-16",
+                format = "d.m.yyyy",
+                weekstart = 1,
+                separator = " to "
+              ),
+              selectInput(
+                inputId = "corrMethod",
+                label = "Choose correlation method:",
+                choices = list("Pearson" = "pearson",
+                               "Spearman" = "spearman")
+              ),
+              
+              actionButton("correlationButton", "Analyze")
+            ),
+            
+            box(
+              title = "Regions comparison",
+              status = "warning",
+              solidHeader = TRUE,
+              collapsible = TRUE,
+              
+              
+              fluidRow(
+                column(
+                  6,
+                  checkboxGroupInput(
+                    inputId = "keyNames",
+                    label = "Choose regions:",
+                    choices = list("Bratislava" = "BA",
+                                   "Zilina" = "ZA")
+                  )
+                ),
+                
+                column(
+                  6,
+                  checkboxGroupInput(
+                    inputId = "variables",
+                    label = "Choose variables:",
+                    choices = list(
+                      "Temperature" = "temperature",
+                      "Humidity" = "humidity",
+                      "Wind" = "wind"
+                    )
+                  )
+                )
+                
+              ),
+              dateRangeInput(
+                "dateRange",
+                label = "Choose period:",
+                start = "2014-07-01",
+                end = "2014-07-31",
                 format = "d.m.yyyy",
                 weekstart = 1,
                 separator = " to "
@@ -44,7 +101,7 @@ body <- dashboardBody(tabItems(
                                "Spearman" = "spearman")
               ),
               
-              actionButton("correlationButton", "Analyze")
+              actionButton("regionCorrelationButton", "Analyze")
             ),
             conditionalPanel(
               condition = "input.correlationButton > 0",
@@ -54,14 +111,16 @@ body <- dashboardBody(tabItems(
                 solidHeader = TRUE,
                 collapsible = TRUE,
                 plotOutput("corrplot")
-              ),
+              )
+            ),
+            conditionalPanel(
+              condition = "input.regionCorrelationButton > 0",
               box(
-                title = "Correlation Table",
+                title = "Regions correlation plot",
                 status = "primary",
                 solidHeader = TRUE,
                 collapsible = TRUE,
-                width = 12,
-                tableOutput("corr")
+                plotOutput("regionCorrelationPlot")
               )
             )
           )),
@@ -98,8 +157,8 @@ body <- dashboardBody(tabItems(
                 plotOutput("gamPlot")
               )
             )
-          )), 
-
+          )),
+  
   # TAB 3
   tabItem(
     tabName = "tabNeuralNetwork",
@@ -109,11 +168,31 @@ body <- dashboardBody(tabItems(
         status = "warning",
         solidHeader = TRUE,
         collapsible = TRUE,
-        selectInput(
-          "nDatabase",
-          "Choose database:",
-          choices = list("Slovak industry data" = "bratislava",
-                         "Texas residential data" = "texas")
+        
+        checkboxGroupInput(
+          "nInputs",
+          label = "Choose inputs to ANN:",
+          choices = list(
+            "p(w,d,h-1)" = "load_h1",
+            "p(w,d,h-2)" = "load_h2",
+            "p(w,d,h-3)" = "load_h3",
+            "p(w,d-1,h)" = "load_d1",
+            "p(w,d-1,h-1)" = "load_d1h1",
+            "p(w,d-1,h-2)" = "load_d1h2",
+            "p(w,d-1,h-3)" = "load_d1h3",
+            "p(w-1,d,h)" = "load_w1",
+            "time" = "time",
+            "day" = "day",
+            "holiday" = "holiday",
+            "season" = "season",
+            "sun" = "sun",
+            "temperature" = "temperature",
+            "pressure" = "pressure",
+            "wind" = "wind",
+            "humidity" = "humidity",
+            "rainfall" = "rainfall"
+          ),
+          selected = c("load_h1", "time", "day", "temperature")
         ),
         dateRangeInput(
           "nDateRange",
@@ -126,7 +205,7 @@ body <- dashboardBody(tabItems(
           weekstart = 1,
           separator = " to "
         ),
-
+        
         checkboxGroupInput(
           "nInputs",
           label = "Choose inputs to ANN:",
@@ -176,12 +255,12 @@ body <- dashboardBody(tabItems(
         )
       )
     ),
-
+    
     # Po stlaceni tlacidla Create Model
     fluidRow(
       conditionalPanel(
         condition = "input.nnModelButton > 0",
-            
+        
         box(
           title = "Real vs Fitted load",
           status = "success",
@@ -216,4 +295,4 @@ body <- dashboardBody(tabItems(
   )
 ))
 
-dashboardPage(title="Disclosure of hidden relationships in the energy data", skin = "green", header, sidebar, body)
+dashboardPage(title = "Disclosure of hidden relationships in the energy data", skin = "green", header, sidebar, body)
