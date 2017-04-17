@@ -53,7 +53,7 @@ processingSlovakEnergy <- function() {
   energy$day = ifelse(wday(energy$datetime)==1,7,wday(energy$datetime)-1)
   
   # vypocer prazdnin
-  holidays <- dbGetQuery(con, "SELECT * FROM slovakia_holiday")
+  holidays <- dbSelect("SELECT * FROM slovakia_holiday")
   holidays$date <- as.Date(holidays$date)
   energy$holiday <- ifelse(energy$date %in% holidays$date, 1, 0)
 
@@ -109,9 +109,11 @@ insertIntoDB <- function(){
   weather <- read.csv(paste("processed/sr/meteo/",".csv", sep= mapper$meteo))
   merged <- merge(x = load, y = weather, by = "datetime", all.x = TRUE)
   
-  dbSendQuery(con, paste("DELETE FROM", mapper$table_name))
-  dbSendQuery(con, paste("ALTER TABLE "," AUTO_INCREMENT = 1", sep = mapper$table_name))
+  dbSelect(sprintf("DELETE FROM %s", mapper$table_name))
+  dbSelect(sprintf("ALTER TABLE %s AUTO_INCREMENT = 1", mapper$table_name))
+  con = getConnection()
   dbWriteTable(con, name=mapper$table_name, value=merged, append=TRUE, row.names=FALSE)
+  dbDisconnect(con)
 }
 
 processingTexasWeather <- function(){

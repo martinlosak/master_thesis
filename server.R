@@ -38,7 +38,7 @@ shinyServer(function(input, output) {
       data = getValues(input$dateRange[1], input$dateRange[2], input$variables, tableName)
       correlatedData = correlate(data, input$corrMethod)
       correlatedData = data.frame(correlatedData)
-      correlatedData$key_name = keyName
+      correlatedData$region = getRegion(keyName)
       correlatedData = correlatedData[1, 2:ncol(correlatedData)]
       correlatedRegions = rbind(correlatedRegions, correlatedData)
     }

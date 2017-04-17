@@ -6,9 +6,14 @@ getConnection <- function(){
 	return(con)
 }
 
-getMapper <- function(){
-	mapper = dbSelect("SELECT * FROM slovakia_mapper")
-	return(mapper)
+getMapper <- function(keyName=NULL){
+	if(is.null(keyName)){
+			query = "SELECT * FROM slovakia_mapper"
+		} else {
+			query = sprintf("SELECT * FROM slovakia_mapper WHERE key_name = '%s'", keyName)
+		}
+	
+	return(dbSelect(query))
 }
 
 dbSelect <- function(query){
@@ -23,4 +28,11 @@ getTableName <- function(keyName) {
 	result = dbSelect(query)
 	tableName = result[,c("table_name")]
 	return(tableName)
+}
+
+getRegion <- function(keyName) {
+	query = sprintf("SELECT * FROM slovakia_mapper WHERE key_name = '%s'", keyName)
+	result = dbSelect(query)
+	region = result[,c("city")]
+	return(region)
 }

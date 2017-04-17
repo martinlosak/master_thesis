@@ -67,7 +67,9 @@ body = dashboardBody(tabItems(
                     inputId = "keyNames",
                     label = "Choose regions:",
                     choices = list("Bratislava" = "BA",
-                                   "Zilina" = "ZA")
+                                   "Zilina" = "ZA",
+                                   "Kosice" = "KE",
+                                   "Poprad" = "PP")
                   )
                 ),
                 
@@ -77,9 +79,15 @@ body = dashboardBody(tabItems(
                     inputId = "variables",
                     label = "Choose variables:",
                     choices = list(
+                      "Time" = "time",
+                      "Day" = "day",
+                      "Holiday" = "holiday",
+                      "Sun" = "sun",
                       "Temperature" = "temperature",
+                      "Pressure" = "pressure",
+                      "Wind" = "wind",
                       "Humidity" = "humidity",
-                      "Wind" = "wind"
+                      "Rainfall" = "rainfall"
                     )
                   )
                 )

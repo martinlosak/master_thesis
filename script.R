@@ -68,25 +68,9 @@ regionCorrelationChart <- function(data){
 	library(ggplot2)
 	library(reshape2)
 
-	mdata = melt(data, id.vars = "key_name")
+	mdata = melt(data, id.vars = "region")
 
-	plot = ggplot(mdata, aes(variable, value, fill=key_name)) + geom_bar(stat="identity", position="dodge")
-	return(plot)
-}
-
-drawMultiBarChart <- function(keyNames, variables){
-
-	library(ggplot2)
-	library(reshape2)
-	variables = c("key_name", variables)
-	variables = paste(variables, collapse = ",")
-	keyNames = toString(sprintf("'%s'", keyNames))
-
-	query = sprintf("SELECT %s FROM slovakia_correlation WHERE key_name IN (%s)", variables, keyNames)
-	corr = dbSelect(query)
-	mdat = melt(corr, id.vars = "key_name")
-
-	plot = ggplot(mdat, aes(variable, value, fill=key_name)) + geom_bar(stat="identity", position="dodge")
+	plot = ggplot(mdata, aes(variable, value, fill=region)) + geom_bar(stat="identity", position="dodge")
 	return(plot)
 }
 
