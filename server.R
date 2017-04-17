@@ -1,7 +1,6 @@
 library(shiny)
 library(corrplot)
 source("dbConnection.R")
-source("import.R")
 source("script.R")
 
 shinyServer(function(input, output) {

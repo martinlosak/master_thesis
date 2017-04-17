@@ -1,0 +1,738 @@
+,electrometer,postcode,location,rows,f
+1,10,586 02,Jihlava - Antonínùv dùl,69985,data/ceskedata/CZ_data_1/10.csv
+2,100,720 00,Ostrava - Hrabová, fáze II.,69985,data/ceskedata/CZ_data_1/100.csv
+3,102,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/102.csv
+4,104,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/104.csv
+5,105,720 00,Ostrava - Hrabová, fáze II.,69985,data/ceskedata/CZ_data_1/105.csv
+6,106,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/106.csv
+7,107,,,69985,data/ceskedata/CZ_data_1/107.csv
+8,108,,,69985,data/ceskedata/CZ_data_1/108.csv
+9,11,664 51,lapanice,69985,data/ceskedata/CZ_data_1/11.csv
+10,113,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/113.csv
+11,114,290 22,Lysá nad Labem, Litol,69985,data/ceskedata/CZ_data_1/114.csv
+12,115,289 22,Lysá nad labem, Litol,69985,data/ceskedata/CZ_data_1/115.csv
+13,1151,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/1151.csv
+14,1152,640 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/1152.csv
+15,1153,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/1153.csv
+16,1154,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/1154.csv
+17,1155,640 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/1155.csv
+18,116,720 00,Ostrava - Hrabová, fáze II.,69985,data/ceskedata/CZ_data_1/116.csv
+19,117,440 01,Louny,69985,data/ceskedata/CZ_data_1/117.csv
+20,118,720 00,Ostrava - Hrabová, fáze II.,69985,data/ceskedata/CZ_data_1/118.csv
+21,119,291 22,Lysá nad Labem, Litol,69985,data/ceskedata/CZ_data_1/119.csv
+22,12,664 51,lapanice,69985,data/ceskedata/CZ_data_1/12.csv
+23,120,,,69985,data/ceskedata/CZ_data_1/120.csv
+24,121,720 00,Ostrava - Hrabová, fáze II.,69985,data/ceskedata/CZ_data_1/121.csv
+25,122,440 01,Louny,69985,data/ceskedata/CZ_data_1/122.csv
+26,123,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/123.csv
+27,124,440 01,Louny,69985,data/ceskedata/CZ_data_1/124.csv
+28,126,720 00,Ostrava - Hrabová, fáze II.,69985,data/ceskedata/CZ_data_1/126.csv
+29,127,720 00,Ostrava - Hrabová, fáze II.,69985,data/ceskedata/CZ_data_1/127.csv
+30,13,664 51,lapanice,69985,data/ceskedata/CZ_data_1/13.csv
+31,130,720 00,Ostrava - Hrabová, fáze II.,69985,data/ceskedata/CZ_data_1/130.csv
+32,131,630 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/131.csv
+33,133,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/133.csv
+34,135,720 00,Ostrava - Hrabová, fáze II.,69985,data/ceskedata/CZ_data_1/135.csv
+35,136,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/136.csv
+36,137,,,69985,data/ceskedata/CZ_data_1/137.csv
+37,138,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/138.csv
+38,139,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/139.csv
+39,14,664 51,lapanice,69985,data/ceskedata/CZ_data_1/14.csv
+40,140,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/140.csv
+41,141,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/141.csv
+42,142,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/142.csv
+43,143,720 00,Ostrava - Hrabová, fáze II.,69985,data/ceskedata/CZ_data_1/143.csv
+44,144,,,69985,data/ceskedata/CZ_data_1/144.csv
+45,145,720 00,Ostrava - Hrabová, fáze II.,69985,data/ceskedata/CZ_data_1/145.csv
+46,147,720 00,Ostrava - Hrabová, fáze II.,69985,data/ceskedata/CZ_data_1/147.csv
+47,148,720 00,Ostrava - Hrabová, fáze II.,69985,data/ceskedata/CZ_data_1/148.csv
+48,149,440 01,Louny,69985,data/ceskedata/CZ_data_1/149.csv
+49,15,664 51,lapanice,69985,data/ceskedata/CZ_data_1/15.csv
+50,151,720 00,Ostrava - Hrabová, fáze II.,69985,data/ceskedata/CZ_data_1/151.csv
+51,152,720 00,Ostrava - Hrabová, fáze II.,69985,data/ceskedata/CZ_data_1/152.csv
+52,153,720 00,Ostrava - Hrabová, fáze II.,69985,data/ceskedata/CZ_data_1/153.csv
+53,154,720 00,Ostrava - Hrabová, fáze II.,69985,data/ceskedata/CZ_data_1/154.csv
+54,155,720 00,Ostrava - Hrabová, fáze II.,69985,data/ceskedata/CZ_data_1/155.csv
+55,156,720 00,Ostrava - Hrabová, fáze II.,69985,data/ceskedata/CZ_data_1/156.csv
+56,1567,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/1567.csv
+57,157,720 00,Ostrava - Hrabová, fáze II.,69985,data/ceskedata/CZ_data_1/157.csv
+58,158,,,69985,data/ceskedata/CZ_data_1/158.csv
+59,159,,,69985,data/ceskedata/CZ_data_1/159.csv
+60,16,664 51,lapanice,69985,data/ceskedata/CZ_data_1/16.csv
+61,160,720 00,Ostrava - Hrabová, fáze II.,69985,data/ceskedata/CZ_data_1/160.csv
+62,161,,,69985,data/ceskedata/CZ_data_1/161.csv
+63,162,,,69985,data/ceskedata/CZ_data_1/162.csv
+64,1636,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/1636.csv
+65,164,691 23,Pohoøelice II,69985,data/ceskedata/CZ_data_1/164.csv
+66,1640,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/1640.csv
+67,1645,,,69985,data/ceskedata/CZ_data_1/1645.csv
+68,1646,720 00,Ostrava - Hrabová, fáze II.,69985,data/ceskedata/CZ_data_1/1646.csv
+69,1647,720 00,Ostrava - Hrabová, fáze II.,69985,data/ceskedata/CZ_data_1/1647.csv
+70,1648,720 00,Ostrava - Hrabová,69985,data/ceskedata/CZ_data_1/1648.csv
+71,1649,720 00,Ostrava - Hrabová, fáze II.,69985,data/ceskedata/CZ_data_1/1649.csv
+72,165,691 23,Pohoøelice II,69985,data/ceskedata/CZ_data_1/165.csv
+73,1650,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/1650.csv
+74,1651,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/1651.csv
+75,1653,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/1653.csv
+76,1654,,,69985,data/ceskedata/CZ_data_1/1654.csv
+77,1655,,,69985,data/ceskedata/CZ_data_1/1655.csv
+78,1656,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/1656.csv
+79,1658,,,69985,data/ceskedata/CZ_data_1/1658.csv
+80,1659,,,69985,data/ceskedata/CZ_data_1/1659.csv
+81,166,691 23,Pohoøelice II,69985,data/ceskedata/CZ_data_1/166.csv
+82,1662,,,69985,data/ceskedata/CZ_data_1/1662.csv
+83,1667,348 02,Bor u Tachova, Nová Hospoda,69985,data/ceskedata/CZ_data_1/1667.csv
+84,167,691 23,Pohoøelice II,69985,data/ceskedata/CZ_data_1/167.csv
+85,1672,359 02,Bor u Tachova, Nová Hospoda,69985,data/ceskedata/CZ_data_1/1672.csv
+86,168,691 23,Pohoøelice II,69985,data/ceskedata/CZ_data_1/168.csv
+87,1684,,,69985,data/ceskedata/CZ_data_1/1684.csv
+88,1685,,,69985,data/ceskedata/CZ_data_1/1685.csv
+89,1686,,,69985,data/ceskedata/CZ_data_1/1686.csv
+90,1687,,,69985,data/ceskedata/CZ_data_1/1687.csv
+91,1688,,,69985,data/ceskedata/CZ_data_1/1688.csv
+92,1689,,,69985,data/ceskedata/CZ_data_1/1689.csv
+93,169,691 23,Pohoøelice II,69985,data/ceskedata/CZ_data_1/169.csv
+94,1690,,,69985,data/ceskedata/CZ_data_1/1690.csv
+95,1691,,,69985,data/ceskedata/CZ_data_1/1691.csv
+96,1692,,,69985,data/ceskedata/CZ_data_1/1692.csv
+97,1693,,,69985,data/ceskedata/CZ_data_1/1693.csv
+98,1694,,,69985,data/ceskedata/CZ_data_1/1694.csv
+99,1695,,,69985,data/ceskedata/CZ_data_1/1695.csv
+100,1696,,,69985,data/ceskedata/CZ_data_1/1696.csv
+101,1697,,,69985,data/ceskedata/CZ_data_1/1697.csv
+102,1698,,,69985,data/ceskedata/CZ_data_1/1698.csv
+103,1699,,,69985,data/ceskedata/CZ_data_1/1699.csv
+104,17,664 51,lapanice,69985,data/ceskedata/CZ_data_1/17.csv
+105,170,691 23,Pohoøelice II,69985,data/ceskedata/CZ_data_1/170.csv
+106,1700,,,69985,data/ceskedata/CZ_data_1/1700.csv
+107,1701,,,69985,data/ceskedata/CZ_data_1/1701.csv
+108,1702,,,69985,data/ceskedata/CZ_data_1/1702.csv
+109,1703,,,69985,data/ceskedata/CZ_data_1/1703.csv
+110,1704,,,69985,data/ceskedata/CZ_data_1/1704.csv
+111,1705,,,69985,data/ceskedata/CZ_data_1/1705.csv
+112,1706,,,69985,data/ceskedata/CZ_data_1/1706.csv
+113,1707,,,69985,data/ceskedata/CZ_data_1/1707.csv
+114,1708,,,69985,data/ceskedata/CZ_data_1/1708.csv
+115,1709,,,69985,data/ceskedata/CZ_data_1/1709.csv
+116,171,691 23,Pohoøelice II,69985,data/ceskedata/CZ_data_1/171.csv
+117,1710,,,69985,data/ceskedata/CZ_data_1/1710.csv
+118,1711,,,69985,data/ceskedata/CZ_data_1/1711.csv
+119,1712,,,69985,data/ceskedata/CZ_data_1/1712.csv
+120,1713,,,69985,data/ceskedata/CZ_data_1/1713.csv
+121,1714,,,69985,data/ceskedata/CZ_data_1/1714.csv
+122,1715,,,69985,data/ceskedata/CZ_data_1/1715.csv
+123,1716,,,69985,data/ceskedata/CZ_data_1/1716.csv
+124,1717,,,69985,data/ceskedata/CZ_data_1/1717.csv
+125,1718,,,69985,data/ceskedata/CZ_data_1/1718.csv
+126,1719,,,69985,data/ceskedata/CZ_data_1/1719.csv
+127,172,691 23,Pohoøelice II,69985,data/ceskedata/CZ_data_1/172.csv
+128,1720,,,69985,data/ceskedata/CZ_data_1/1720.csv
+129,1721,,,69985,data/ceskedata/CZ_data_1/1721.csv
+130,1722,,,69985,data/ceskedata/CZ_data_1/1722.csv
+131,1723,,,69985,data/ceskedata/CZ_data_1/1723.csv
+132,1724,,,69985,data/ceskedata/CZ_data_1/1724.csv
+133,1725,,,69985,data/ceskedata/CZ_data_1/1725.csv
+134,1726,,,69985,data/ceskedata/CZ_data_1/1726.csv
+135,1727,,,69985,data/ceskedata/CZ_data_1/1727.csv
+136,1729,,,69985,data/ceskedata/CZ_data_1/1729.csv
+137,173,691 23,Pohoøelice II,69985,data/ceskedata/CZ_data_1/173.csv
+138,1730,,,69985,data/ceskedata/CZ_data_1/1730.csv
+139,1731,,,69985,data/ceskedata/CZ_data_1/1731.csv
+140,1732,,,69985,data/ceskedata/CZ_data_1/1732.csv
+141,1733,,,69985,data/ceskedata/CZ_data_1/1733.csv
+142,1734,,,69985,data/ceskedata/CZ_data_1/1734.csv
+143,1735,,,69985,data/ceskedata/CZ_data_1/1735.csv
+144,1736,,,69985,data/ceskedata/CZ_data_1/1736.csv
+145,1737,,,69985,data/ceskedata/CZ_data_1/1737.csv
+146,1738,,,69985,data/ceskedata/CZ_data_1/1738.csv
+147,174,691 23,Pohoøelice II,69985,data/ceskedata/CZ_data_1/174.csv
+148,1740,,,69985,data/ceskedata/CZ_data_1/1740.csv
+149,1742,,,69985,data/ceskedata/CZ_data_1/1742.csv
+150,1743,,,69985,data/ceskedata/CZ_data_1/1743.csv
+151,1744,,,69985,data/ceskedata/CZ_data_1/1744.csv
+152,1745,,,69985,data/ceskedata/CZ_data_1/1745.csv
+153,1746,,,69985,data/ceskedata/CZ_data_1/1746.csv
+154,1747,,,69985,data/ceskedata/CZ_data_1/1747.csv
+155,1748,,,69985,data/ceskedata/CZ_data_1/1748.csv
+156,1749,,,69985,data/ceskedata/CZ_data_1/1749.csv
+157,175,691 23,Pohoøelice II,69985,data/ceskedata/CZ_data_1/175.csv
+158,1751,,,69985,data/ceskedata/CZ_data_1/1751.csv
+159,1753,,,69985,data/ceskedata/CZ_data_1/1753.csv
+160,1754,,,69985,data/ceskedata/CZ_data_1/1754.csv
+161,1755,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/1755.csv
+162,1756,,,69985,data/ceskedata/CZ_data_1/1756.csv
+163,1759,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/1759.csv
+164,176,691 23,Pohoøelice II,69985,data/ceskedata/CZ_data_1/176.csv
+165,1760,,,69985,data/ceskedata/CZ_data_1/1760.csv
+166,1768,,,69985,data/ceskedata/CZ_data_1/1768.csv
+167,1770,352 02,Bor u Tachova, Nová Hospoda,69985,data/ceskedata/CZ_data_1/1770.csv
+168,1771,356 02,Bor u Tachova, Nová Hospoda,69985,data/ceskedata/CZ_data_1/1771.csv
+169,1783,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/1783.csv
+170,18,664 51,lapanice,69985,data/ceskedata/CZ_data_1/18.csv
+171,19,664 51,lapanice,69985,data/ceskedata/CZ_data_1/19.csv
+172,2,586 02,Jihlava - Antonínùv dùl,69985,data/ceskedata/CZ_data_1/2.csv
+173,20,,,69985,data/ceskedata/CZ_data_1/20.csv
+174,2015,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/2015.csv
+175,2022,,,69985,data/ceskedata/CZ_data_1/2022.csv
+176,2023,,,69985,data/ceskedata/CZ_data_1/2023.csv
+177,2024,,,69985,data/ceskedata/CZ_data_1/2024.csv
+178,2025,,,69985,data/ceskedata/CZ_data_1/2025.csv
+179,2026,,,69985,data/ceskedata/CZ_data_1/2026.csv
+180,2027,,,69985,data/ceskedata/CZ_data_1/2027.csv
+181,2028,,,69985,data/ceskedata/CZ_data_1/2028.csv
+182,2029,,,69985,data/ceskedata/CZ_data_1/2029.csv
+183,2030,,,69985,data/ceskedata/CZ_data_1/2030.csv
+184,2031,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/2031.csv
+185,2032,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/2032.csv
+186,2039,,,69985,data/ceskedata/CZ_data_1/2039.csv
+187,204,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/204.csv
+188,2040,,,69985,data/ceskedata/CZ_data_1/2040.csv
+189,2043,720 00,Ostrava - Hrabová, fáze II.,69985,data/ceskedata/CZ_data_1/2043.csv
+190,2049,,,69985,data/ceskedata/CZ_data_1/2049.csv
+191,205,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/205.csv
+192,2050,,,69985,data/ceskedata/CZ_data_1/2050.csv
+193,2051,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/2051.csv
+194,2052,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/2052.csv
+195,2053,,,69985,data/ceskedata/CZ_data_1/2053.csv
+196,2054,,,69985,data/ceskedata/CZ_data_1/2054.csv
+197,2056,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/2056.csv
+198,2058,293 01,Mladá Boleslav,69985,data/ceskedata/CZ_data_1/2058.csv
+199,2059,,,69985,data/ceskedata/CZ_data_1/2059.csv
+200,206,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/206.csv
+201,2060,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/2060.csv
+202,2061,301 00 ,Plzeò ,69985,data/ceskedata/CZ_data_1/2061.csv
+203,2064,,,69985,data/ceskedata/CZ_data_1/2064.csv
+204,2066,,,69985,data/ceskedata/CZ_data_1/2066.csv
+205,2067,,,69985,data/ceskedata/CZ_data_1/2067.csv
+206,2069,,,69985,data/ceskedata/CZ_data_1/2069.csv
+207,207,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/207.csv
+208,2070,,,69985,data/ceskedata/CZ_data_1/2070.csv
+209,2071,,,69985,data/ceskedata/CZ_data_1/2071.csv
+210,2072,,,69985,data/ceskedata/CZ_data_1/2072.csv
+211,2073,,,69985,data/ceskedata/CZ_data_1/2073.csv
+212,2074,,,69985,data/ceskedata/CZ_data_1/2074.csv
+213,2075,,,69985,data/ceskedata/CZ_data_1/2075.csv
+214,2076,,,69985,data/ceskedata/CZ_data_1/2076.csv
+215,2077,,,69985,data/ceskedata/CZ_data_1/2077.csv
+216,2078,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/2078.csv
+217,2079,,,69985,data/ceskedata/CZ_data_1/2079.csv
+218,208,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/208.csv
+219,2080,,,69985,data/ceskedata/CZ_data_1/2080.csv
+220,2081,,,69985,data/ceskedata/CZ_data_1/2081.csv
+221,2082,,,69985,data/ceskedata/CZ_data_1/2082.csv
+222,2083,,,69985,data/ceskedata/CZ_data_1/2083.csv
+223,2084,,,69985,data/ceskedata/CZ_data_1/2084.csv
+224,2085,,,69985,data/ceskedata/CZ_data_1/2085.csv
+225,2086,,,69985,data/ceskedata/CZ_data_1/2086.csv
+226,209,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/209.csv
+227,2096,365 02,Bor u Tachova, Nová Hospoda,69985,data/ceskedata/CZ_data_1/2096.csv
+228,2097,639 00,Brno,69985,data/ceskedata/CZ_data_1/2097.csv
+229,2098,293 01,Bezdìèín,69985,data/ceskedata/CZ_data_1/2098.csv
+230,21,664 51,lapanice,69985,data/ceskedata/CZ_data_1/21.csv
+231,210,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/210.csv
+232,2100,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/2100.csv
+233,2101,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/2101.csv
+234,2102,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/2102.csv
+235,2103,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/2103.csv
+236,2104,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/2104.csv
+237,2105,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/2105.csv
+238,2106,721 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/2106.csv
+239,2107,,,69985,data/ceskedata/CZ_data_1/2107.csv
+240,2108,720 00,Ostrava - Hrabová ,69985,data/ceskedata/CZ_data_1/2108.csv
+241,2109,301 00,Plzeò,69985,data/ceskedata/CZ_data_1/2109.csv
+242,211,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/211.csv
+243,2110,318 00 ,Plzeò,69985,data/ceskedata/CZ_data_1/2110.csv
+244,2111,720 00,Ostrava - Hrabová, fáze II.,69985,data/ceskedata/CZ_data_1/2111.csv
+245,2116,301 00,Plzeò,69985,data/ceskedata/CZ_data_1/2116.csv
+246,2117,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/2117.csv
+247,2118,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/2118.csv
+248,2119,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/2119.csv
+249,212,,,69985,data/ceskedata/CZ_data_1/212.csv
+250,2120,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/2120.csv
+251,2121,,,69985,data/ceskedata/CZ_data_1/2121.csv
+252,2123,,,69985,data/ceskedata/CZ_data_1/2123.csv
+253,2124,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2124.csv
+254,2125,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2125.csv
+255,2126,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2126.csv
+256,2127,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2127.csv
+257,2128,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2128.csv
+258,2129,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2129.csv
+259,213,,,69985,data/ceskedata/CZ_data_1/213.csv
+260,2130,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2130.csv
+261,2131,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2131.csv
+262,2132,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2132.csv
+263,2133,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2133.csv
+264,2134,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2134.csv
+265,2135,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2135.csv
+266,2136,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2136.csv
+267,2137,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2137.csv
+268,2138,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2138.csv
+269,2139,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2139.csv
+270,214,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/214.csv
+271,2140,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2140.csv
+272,2141,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2141.csv
+273,2142,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2142.csv
+274,2143,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2143.csv
+275,2144,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2144.csv
+276,2145,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2145.csv
+277,2146,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2146.csv
+278,2147,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2147.csv
+279,2148,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2148.csv
+280,2149,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2149.csv
+281,215,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/215.csv
+282,2150,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2150.csv
+283,2151,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2151.csv
+284,2152,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2152.csv
+285,2153,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2153.csv
+286,2154,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2154.csv
+287,2155,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2155.csv
+288,2156,,,69985,data/ceskedata/CZ_data_1/2156.csv
+289,2157,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2157.csv
+290,2158,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2158.csv
+291,2159,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2159.csv
+292,216,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/216.csv
+293,2160,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2160.csv
+294,2161,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2161.csv
+295,2162,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2162.csv
+296,2163,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2163.csv
+297,2164,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2164.csv
+298,217,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/217.csv
+299,218,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/218.csv
+300,219,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/219.csv
+301,22,,,69985,data/ceskedata/CZ_data_1/22.csv
+302,220,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/220.csv
+303,221,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/221.csv
+304,222,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/222.csv
+305,223,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/223.csv
+306,224,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/224.csv
+307,225,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/225.csv
+308,226,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/226.csv
+309,227,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/227.csv
+310,228,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/228.csv
+311,229,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/229.csv
+312,23,664 51,lapanice,69985,data/ceskedata/CZ_data_1/23.csv
+313,230,,,69985,data/ceskedata/CZ_data_1/230.csv
+314,231,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/231.csv
+315,2314,,,69985,data/ceskedata/CZ_data_1/2314.csv
+316,2315,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2315.csv
+317,2316,,,69985,data/ceskedata/CZ_data_1/2316.csv
+318,2317,,,69985,data/ceskedata/CZ_data_1/2317.csv
+319,2318,293 01,Bezdìèín,69985,data/ceskedata/CZ_data_1/2318.csv
+320,2319,,,69985,data/ceskedata/CZ_data_1/2319.csv
+321,232,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/232.csv
+322,2320,,,69985,data/ceskedata/CZ_data_1/2320.csv
+323,2321,,,69985,data/ceskedata/CZ_data_1/2321.csv
+324,2322,,,69985,data/ceskedata/CZ_data_1/2322.csv
+325,2323,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2323.csv
+326,2324,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2324.csv
+327,2326,,,69985,data/ceskedata/CZ_data_1/2326.csv
+328,2327,,,69985,data/ceskedata/CZ_data_1/2327.csv
+329,2329,252 68,Knìeves,69985,data/ceskedata/CZ_data_1/2329.csv
+330,233,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/233.csv
+331,2330,,,69985,data/ceskedata/CZ_data_1/2330.csv
+332,2331,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/2331.csv
+333,2332,,,69985,data/ceskedata/CZ_data_1/2332.csv
+334,234,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/234.csv
+335,235,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/235.csv
+336,236,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/236.csv
+337,237,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/237.csv
+338,238,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/238.csv
+339,239,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/239.csv
+340,24,664 51,lapanice,69985,data/ceskedata/CZ_data_1/24.csv
+341,240,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/240.csv
+342,241,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/241.csv
+343,242,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/242.csv
+344,243,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/243.csv
+345,244,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/244.csv
+346,245,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/245.csv
+347,246,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/246.csv
+348,247,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/247.csv
+349,248,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/248.csv
+350,249,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/249.csv
+351,25,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/25.csv
+352,250,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/250.csv
+353,251,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/251.csv
+354,252,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/252.csv
+355,253,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/253.csv
+356,254,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/254.csv
+357,255,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/255.csv
+358,256,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/256.csv
+359,257,,,69985,data/ceskedata/CZ_data_1/257.csv
+360,258,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/258.csv
+361,259,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/259.csv
+362,26,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/26.csv
+363,260,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/260.csv
+364,261,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/261.csv
+365,262,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/262.csv
+366,263,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/263.csv
+367,264,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/264.csv
+368,265,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/265.csv
+369,266,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/266.csv
+370,267,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/267.csv
+371,268,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/268.csv
+372,269,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/269.csv
+373,27,664 42,Modøice - Brno,69985,data/ceskedata/CZ_data_1/27.csv
+374,270,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/270.csv
+375,271,,,69985,data/ceskedata/CZ_data_1/271.csv
+376,272,349 02,Bor u Tachova, Nová Hospoda,69985,data/ceskedata/CZ_data_1/272.csv
+377,273,350 02,Bor u Tachova, Nová Hospoda,69985,data/ceskedata/CZ_data_1/273.csv
+378,274,351 02,Bor u Tachova, Nová Hospoda,69985,data/ceskedata/CZ_data_1/274.csv
+379,275,,,69985,data/ceskedata/CZ_data_1/275.csv
+380,276,353 02,Bor u Tachova, Nová Hospoda,69985,data/ceskedata/CZ_data_1/276.csv
+381,277,354 02,Bor u Tachova, Nová Hospoda,69985,data/ceskedata/CZ_data_1/277.csv
+382,278,355 02,Bor u Tachova, Nová Hospoda,69985,data/ceskedata/CZ_data_1/278.csv
+383,279,,,69985,data/ceskedata/CZ_data_1/279.csv
+384,28,,,69985,data/ceskedata/CZ_data_1/28.csv
+385,280,357 02,Bor u Tachova, Nová Hospoda,69985,data/ceskedata/CZ_data_1/280.csv
+386,281,348 02,Bor u Tachova, Nová Hospoda,69985,data/ceskedata/CZ_data_1/281.csv
+387,282,,,69985,data/ceskedata/CZ_data_1/282.csv
+388,283,348 02,Bor u Tachova, Nová Hospoda,69985,data/ceskedata/CZ_data_1/283.csv
+389,284,361 02,Bor u Tachova, Nová Hospoda,69985,data/ceskedata/CZ_data_1/284.csv
+390,285,362 02,Bor u Tachova, Nová Hospoda,69985,data/ceskedata/CZ_data_1/285.csv
+391,286,363 02,Bor u Tachova, Nová Hospoda,69985,data/ceskedata/CZ_data_1/286.csv
+392,287,364 02,Bor u Tachova, Nová Hospoda,69985,data/ceskedata/CZ_data_1/287.csv
+393,288,,,69985,data/ceskedata/CZ_data_1/288.csv
+394,289,368 02,Bor u Tachova,69985,data/ceskedata/CZ_data_1/289.csv
+395,29,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/29.csv
+396,290,369 02,,69985,data/ceskedata/CZ_data_1/290.csv
+397,291,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/291.csv
+398,292,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/292.csv
+399,293,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/293.csv
+400,294,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/294.csv
+401,295,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/295.csv
+402,296,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/296.csv
+403,297,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/297.csv
+404,298,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/298.csv
+405,299,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/299.csv
+406,3,586 02,Jihlava - Antonínùv dùl,69985,data/ceskedata/CZ_data_1/3.csv
+407,30,691 23,Pohoøelice, fáze I.,69985,data/ceskedata/CZ_data_1/30.csv
+408,300,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/300.csv
+409,301,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/301.csv
+410,302,,,69985,data/ceskedata/CZ_data_1/302.csv
+411,303,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/303.csv
+412,304,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/304.csv
+413,305,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/305.csv
+414,306,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/306.csv
+415,307,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/307.csv
+416,308,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/308.csv
+417,309,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/309.csv
+418,31,692 23,Pohoøelice, fáze I.,69985,data/ceskedata/CZ_data_1/31.csv
+419,310,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/310.csv
+420,311,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/311.csv
+421,312,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/312.csv
+422,313,,,69985,data/ceskedata/CZ_data_1/313.csv
+423,314,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/314.csv
+424,315,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/315.csv
+425,316,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/316.csv
+426,317,,,69985,data/ceskedata/CZ_data_1/317.csv
+427,318,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/318.csv
+428,319,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/319.csv
+429,32,693 23,Pohoøelice, fáze I.,69985,data/ceskedata/CZ_data_1/32.csv
+430,320,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/320.csv
+431,322,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/322.csv
+432,323,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/323.csv
+433,324,,,69985,data/ceskedata/CZ_data_1/324.csv
+434,325,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/325.csv
+435,326,,,69985,data/ceskedata/CZ_data_1/326.csv
+436,327,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/327.csv
+437,328,,,69985,data/ceskedata/CZ_data_1/328.csv
+438,329,,,69985,data/ceskedata/CZ_data_1/329.csv
+439,33,694 23,Pohoøelice, fáze I.,69985,data/ceskedata/CZ_data_1/33.csv
+440,330,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/330.csv
+441,331,,,69985,data/ceskedata/CZ_data_1/331.csv
+442,332,,,69985,data/ceskedata/CZ_data_1/332.csv
+443,333,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/333.csv
+444,334,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/334.csv
+445,335,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/335.csv
+446,336,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/336.csv
+447,337,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/337.csv
+448,338,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/338.csv
+449,339,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/339.csv
+450,34,695 23,Pohoøelice, fáze I.,69985,data/ceskedata/CZ_data_1/34.csv
+451,340,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/340.csv
+452,341,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/341.csv
+453,342,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/342.csv
+454,343,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/343.csv
+455,344,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/344.csv
+456,345,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/345.csv
+457,346,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/346.csv
+458,347,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/347.csv
+459,348,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/348.csv
+460,349,720 00,Ostrava - Hrabová, fáze I.,69985,data/ceskedata/CZ_data_1/349.csv
+461,35,696 23,Pohoøelice, fáze I.,69985,data/ceskedata/CZ_data_1/35.csv
+462,350,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/350.csv
+463,351,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/351.csv
+464,352,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/352.csv
+465,353,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/353.csv
+466,354,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/354.csv
+467,355,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/355.csv
+468,356,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/356.csv
+469,357,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/357.csv
+470,358,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/358.csv
+471,359,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/359.csv
+472,36,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/36.csv
+473,360,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/360.csv
+474,361,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/361.csv
+475,362,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/362.csv
+476,363,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/363.csv
+477,364,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/364.csv
+478,365,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/365.csv
+479,366,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/366.csv
+480,367,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/367.csv
+481,368,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/368.csv
+482,369,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/369.csv
+483,37,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/37.csv
+484,370,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/370.csv
+485,371,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/371.csv
+486,372,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/372.csv
+487,373,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/373.csv
+488,374,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/374.csv
+489,375,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/375.csv
+490,376,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/376.csv
+491,377,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/377.csv
+492,378,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/378.csv
+493,379,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/379.csv
+494,38,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/38.csv
+495,380,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/380.csv
+496,381,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/381.csv
+497,382,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/382.csv
+498,383,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/383.csv
+499,385,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/385.csv
+500,386,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/386.csv
+501,387,,,69985,data/ceskedata/CZ_data_1/387.csv
+502,388,,,69985,data/ceskedata/CZ_data_1/388.csv
+503,389,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/389.csv
+504,39,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/39.csv
+505,390,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/390.csv
+506,391,,,69985,data/ceskedata/CZ_data_1/391.csv
+507,392,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/392.csv
+508,393,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/393.csv
+509,394,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/394.csv
+510,395,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/395.csv
+511,396,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/396.csv
+512,397,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/397.csv
+513,399,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/399.csv
+514,4,586 02,Jihlava - Antonínùv dùl,69985,data/ceskedata/CZ_data_1/4.csv
+515,40,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/40.csv
+516,400,,,69985,data/ceskedata/CZ_data_1/400.csv
+517,401,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/401.csv
+518,402,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/402.csv
+519,403,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/403.csv
+520,404,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/404.csv
+521,405,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/405.csv
+522,406,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/406.csv
+523,408,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/408.csv
+524,409,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/409.csv
+525,41,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/41.csv
+526,410,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/410.csv
+527,411,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/411.csv
+528,412,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/412.csv
+529,413,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/413.csv
+530,414,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/414.csv
+531,415,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/415.csv
+532,416,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/416.csv
+533,417,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/417.csv
+534,418,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/418.csv
+535,419,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/419.csv
+536,42,301 00,Plzeò,69985,data/ceskedata/CZ_data_1/42.csv
+537,423,,,69985,data/ceskedata/CZ_data_1/423.csv
+538,424,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/424.csv
+539,425,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/425.csv
+540,426,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/426.csv
+541,427,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/427.csv
+542,428,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/428.csv
+543,429,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/429.csv
+544,43,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/43.csv
+545,430,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/430.csv
+546,431,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/431.csv
+547,432,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/432.csv
+548,433,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/433.csv
+549,434,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/434.csv
+550,435,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/435.csv
+551,436,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/436.csv
+552,437,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/437.csv
+553,438,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/438.csv
+554,439,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/439.csv
+555,44,301 00,Plzeò - Skvròany,69985,data/ceskedata/CZ_data_1/44.csv
+556,440,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/440.csv
+557,441,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/441.csv
+558,442,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/442.csv
+559,443,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/443.csv
+560,444,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/444.csv
+561,445,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/445.csv
+562,446,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/446.csv
+563,447,639 00,Brno - krobárny,69985,data/ceskedata/CZ_data_1/447.csv
+564,448,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/448.csv
+565,449,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/449.csv
+566,45,664 42,Modøice II. - Brno,69985,data/ceskedata/CZ_data_1/45.csv
+567,450,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/450.csv
+568,451,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/451.csv
+569,452,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/452.csv
+570,453,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/453.csv
+571,454,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/454.csv
+572,455,,,69985,data/ceskedata/CZ_data_1/455.csv
+573,456,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/456.csv
+574,457,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/457.csv
+575,458,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/458.csv
+576,459,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/459.csv
+577,46,664 42,Modøice II. - Brno,69985,data/ceskedata/CZ_data_1/46.csv
+578,460,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/460.csv
+579,461,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/461.csv
+580,462,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/462.csv
+581,463,,,69985,data/ceskedata/CZ_data_1/463.csv
+582,464,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/464.csv
+583,46477159,èas,datum,35232,data/ceskedata/CZ_data_1/46477159.csv
+584,465,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/465.csv
+585,466,,,69985,data/ceskedata/CZ_data_1/466.csv
+586,467,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/467.csv
+587,468,,,69985,data/ceskedata/CZ_data_1/468.csv
+588,469,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/469.csv
+589,47,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/47.csv
+590,470,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/470.csv
+591,471,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/471.csv
+592,472,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/472.csv
+593,473,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/473.csv
+594,474,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/474.csv
+595,475,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/475.csv
+596,476,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/476.csv
+597,477,,,69985,data/ceskedata/CZ_data_1/477.csv
+598,478,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/478.csv
+599,479,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/479.csv
+600,48,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/48.csv
+601,480,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/480.csv
+602,481,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/481.csv
+603,482,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/482.csv
+604,483,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/483.csv
+605,484,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/484.csv
+606,485,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/485.csv
+607,486,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/486.csv
+608,487,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/487.csv
+609,488,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/488.csv
+610,489,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/489.csv
+611,49,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/49.csv
+612,490,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/490.csv
+613,491,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/491.csv
+614,492,,,69985,data/ceskedata/CZ_data_1/492.csv
+615,494,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/494.csv
+616,495,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/495.csv
+617,496,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/496.csv
+618,497,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/497.csv
+619,498,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/498.csv
+620,499,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/499.csv
+621,5,586 02,Jihlava - Antonínùv dùl,69985,data/ceskedata/CZ_data_1/5.csv
+622,50,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/50.csv
+623,500,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/500.csv
+624,501,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/501.csv
+625,502,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/502.csv
+626,503,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/503.csv
+627,504,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/504.csv
+628,50497727,èas,datum,31968,data/ceskedata/CZ_data_1/50497727.csv
+629,505,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/505.csv
+630,506,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/506.csv
+631,507,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/507.csv
+632,508,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/508.csv
+633,509,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/509.csv
+634,51,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/51.csv
+635,510,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/510.csv
+636,511,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/511.csv
+637,512,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/512.csv
+638,513,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/513.csv
+639,514,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/514.csv
+640,515,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/515.csv
+641,516,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/516.csv
+642,517,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/517.csv
+643,518,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/518.csv
+644,519,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/519.csv
+645,52,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/52.csv
+646,520,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/520.csv
+647,521,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/521.csv
+648,522,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/522.csv
+649,523,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/523.csv
+650,524,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/524.csv
+651,525,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/525.csv
+652,526,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/526.csv
+653,527,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/527.csv
+654,528,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/528.csv
+655,529,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/529.csv
+656,53,,,69985,data/ceskedata/CZ_data_1/53.csv
+657,530,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/530.csv
+658,531,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/531.csv
+659,532,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/532.csv
+660,533,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/533.csv
+661,534,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/534.csv
+662,535,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/535.csv
+663,536,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/536.csv
+664,537,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/537.csv
+665,538,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/538.csv
+666,539,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/539.csv
+667,54,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/54.csv
+668,540,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/540.csv
+669,541,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/541.csv
+670,542,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/542.csv
+671,543,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/543.csv
+672,544,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/544.csv
+673,545,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/545.csv
+674,546,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/546.csv
+675,547,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/547.csv
+676,548,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/548.csv
+677,549,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/549.csv
+678,55,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/55.csv
+679,550,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/550.csv
+680,551,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/551.csv
+681,552,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/552.csv
+682,553,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/553.csv
+683,554,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/554.csv
+684,555,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/555.csv
+685,556,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/556.csv
+686,557,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/557.csv
+687,558,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/558.csv
+688,559,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/559.csv
+689,56,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/56.csv
+690,560,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/560.csv
+691,561,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/561.csv
+692,562,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/562.csv
+693,563,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/563.csv
+694,564,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/564.csv
+695,565,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/565.csv
+696,566,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/566.csv
+697,567,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/567.csv
+698,569,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/569.csv
+699,57,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/57.csv
+700,570,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/570.csv
+701,571,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/571.csv
+702,572,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/572.csv
+703,573,,,69985,data/ceskedata/CZ_data_1/573.csv
+704,574,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/574.csv
+705,575,639 00,Brno - Spielberk,69985,data/ceskedata/CZ_data_1/575.csv
+706,58,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/58.csv
+707,59,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/59.csv
+708,6,586 02,Jihlava - Antonínùv dùl,69985,data/ceskedata/CZ_data_1/6.csv
+709,60,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/60.csv
+710,61,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/61.csv
+711,62,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/62.csv
+712,63,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/63.csv
+713,64,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/64.csv
+714,65,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/65.csv
+715,66,301 00,Plzeò, Borská pole,69985,data/ceskedata/CZ_data_1/66.csv
+716,7,586 02,Jihlava - Antonínùv dùl,69985,data/ceskedata/CZ_data_1/7.csv
+717,8,586 02,Jihlava - Antonínùv dùl,69985,data/ceskedata/CZ_data_1/8.csv
+718,9,586 02,Jihlava - Antonínùv dùl,69985,data/ceskedata/CZ_data_1/9.csv
+719,903,628 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/903.csv
+720,904,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/904.csv
+721,905,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/905.csv
+722,906,629 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/906.csv
+723,907,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/907.csv
+724,908,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/908.csv
+725,909,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/909.csv
+726,910,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/910.csv
+727,911,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/911.csv
+728,912,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/912.csv
+729,913,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/913.csv
+730,914,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/914.csv
+731,915,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/915.csv
+732,916,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/916.csv
+733,917,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/917.csv
+734,918,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/918.csv
+735,919,627 00,Brno - Èernovické terasy,69985,data/ceskedata/CZ_data_1/919.csv
+736,97,366 02,Bor u Tachova, Nová Hospoda,69985,data/ceskedata/CZ_data_1/97.csv
+737,99,,,69985,data/ceskedata/CZ_data_1/99.csv
