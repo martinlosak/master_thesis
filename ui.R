@@ -125,6 +125,7 @@ body = dashboardBody(tabItems(
               condition = "input.regionCorrelationButton > 0",
               box(
                 title = "Regions correlation plot",
+                width = 12,
                 status = "primary",
                 solidHeader = TRUE,
                 collapsible = TRUE,
