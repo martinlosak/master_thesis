@@ -70,7 +70,7 @@ regionCorrelationChart <- function(data){
 
 	mdata = melt(data, id.vars = "region")
 
-	plot = ggplot(mdata, aes(variable, value, fill=region)) + geom_bar(stat="identity", position="dodge")
+	plot = ggplot(mdata, aes(variable, value, fill=region)) + geom_bar(stat="identity", position="dodge") + theme(axis.text = element_text(size=14))
 	return(plot)
 }
 
