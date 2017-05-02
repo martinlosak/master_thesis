@@ -1,8 +1,11 @@
 library(RMySQL)
 
+dbUser = "root"
+dbPassword = "root"
+dbName = "dp"
+
 getConnection <- function(){
-	# con = dbConnect(MySQL(),user="martinlosak", password="Spider77",dbname="dp", host="dplosak.cvsz6xbnnwbe.eu-central-1.rds.amazonaws.com")
-	con = dbConnect(MySQL(),user="root", password="root",dbname="dp", host="localhost")
+	con = dbConnect(MySQL(), user = dbUser, password = dbPassword, dbname = dbName, host="localhost")
 	return(con)
 }
 

@@ -66,9 +66,10 @@ shinyServer(function(input, output) {
     })
     
     observeEvent(input$nnModelButton, {
+      split = round_any(input$split*nrow(data)/100, 96, floor)
       output$neural = renderPrint({
-        nn <<- createNeuralModel(data, input$nInputs, input$split)
-        computed <<- computeANN(nn, data, input$nInputs, input$split)
+        nn <<- createNeuralModel(data, input$nInputs, split)
+        computed <<- computeANN(nn, data, input$nInputs, split)
       })
       
       output$mapeBox = renderValueBox({
@@ -95,8 +96,10 @@ shinyServer(function(input, output) {
 
   # TAB - ACTIVE ENERGY
   observeEvent(input$activeButton, {
-    summary = consumptionBy(input$typeOfAggregation, "processed/cz/clusters")
-    conditionalStyle = 'function(row, data) {
+    summary = consumptionBy(input$typeOfAggregation, input$clusteringType)
+
+    if(input$typeOfAggregation == "shift") {
+      conditionalStyle = 'function(row, data) {
       if (data[1] >= 30) {
         $("td:eq(1)", row).css("color", "green");
       } else {
@@ -115,6 +118,10 @@ shinyServer(function(input, output) {
         $("td:eq(3)", row).css("color", "red");
       }
     }'
+    } else {
+      conditionalStyle = NULL
+    }
+    
 
     output$activeTable = renderDataTable(summary, options = list(rowCallback = DT::JS(conditionalStyle),
                                                                    paging = FALSE,

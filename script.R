@@ -52,18 +52,6 @@ createGamModel <- function(data){
   return(plot)
 }
 
-# inputs = c("load_d1","load_w1","time","day")
-# inputs = c("load_d1","load_w1","holiday")
-# inputs = c("load_d1","load_w1","time","day","holiday")
-# inputs = c("load_d1","load_w1","time","day","holiday","temperature", "humidity")
-# 
-# data = getValues('2014-07-01','2014-07-31', inputs, "bratislava")
-# data = na.omit(data)
-# split = nrow(data)/31 * 30
-# gam = createGamModel(data)
-# nn = createNeuralModel(data,inputs,split)
-# computed = computeANN(nn,data, inputs, split)
-
 regionCorrelationChart <- function(data){
 	library(ggplot2)
 	library(reshape2)
@@ -97,13 +85,6 @@ computedLinePlot <- function(computed){
   plot = plot(computed$data$predicted, type="l", xlab="Time", ylab="Load [kWh]", col="red",main='Real vs fitted load')
   lines(computed$data$load,col="green")
   legend('topright',legend=c("ANN","Real"),col=c("red","green"), lty=1, bty='n')
-  
-  # library(ggplot2)
-  # library(data.table)
-  # ggplot(data = data.table(datetime = computed$data$datetime, fitted = computed$data$predicted, real = computed$data$load), aes(datetime)) +
-  #   geom_line(aes(y = real), colour="green") +
-  #   geom_line(aes(y = fitted), colour="red") + labs(title = "Real vs fitted load", x = "Time", y = "Load [kWh]")
-  
   return(plot)
 }
 

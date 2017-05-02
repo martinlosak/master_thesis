@@ -19,7 +19,11 @@ sidebar = dashboardSidebar(sidebarMenu(
   menuItem("GAM", tabName = "tabGAM", icon = icon("line-chart")),
   menuItem("Neural network", tabName = "tabNeuralNetwork", icon = icon("cogs")),
   menuItem("Active energy", tabName = "tabActiveEnergy", icon = icon("bolt")),
-  menuItem("Reactive energy", tabName = "tabReactiveEnergy", icon = icon("bolt"))
+  menuItem(
+    "Reactive energy",
+    tabName = "tabReactiveEnergy",
+    icon = icon("bolt")
+  )
 ))
 
 body = dashboardBody(tabItems(
@@ -204,7 +208,10 @@ body = dashboardBody(tabItems(
           "nDatabase",
           "Choose database:",
           choices = list(
-            "Slovak industry data" = "sr_bratislava",
+            "Bratislava - industry data" = "sr_bratislava",
+            "Zilina - industry data" = "sr_zilina",
+            "Kosice - industry data" = "sr_kosice",
+            "Poprad - industry data" = "sr_poprad",
             "Texas residential data" = "texas"
           )
         ),
@@ -260,10 +267,10 @@ body = dashboardBody(tabItems(
           sliderInput(
             "split",
             "Train / Test split:",
-            min = 96,
-            max = 2976,
-            value = 2880,
-            step = 96
+            min = 10,
+            max = 100,
+            value = 99,
+            step = 1
           ),
           actionButton("nnModelButton", "Create model")
         )
@@ -307,7 +314,7 @@ body = dashboardBody(tabItems(
       )
     )
   ),
-
+  
   # TAB - ACTIVE ENERGY
   tabItem(tabName = "tabActiveEnergy",
           fluidRow(
@@ -317,12 +324,23 @@ body = dashboardBody(tabItems(
               solidHeader = TRUE,
               collapsible = TRUE,
               selectInput(
-              "typeOfAggregation",
-              "Type of aggregation:",
-              choices = list("Hourly" = "hour",
-                             "Daily" = "day",
-                             "Shiftly" = "shift")
-            ),
+                "typeOfAggregation",
+                "Type of aggregation:",
+                choices = list(
+                  "Hourly" = "hour",
+                  "Daily" = "day",
+                  "Shiftly" = "shift"
+                )
+              ),
+              radioButtons(
+                inputId = "clusteringType",
+                label = h3("Clustering type"),
+                choices = list(
+                  "K-means hourly trend clustering" = "trend",
+                  "Company average load clustering" = "average"
+                ),
+                selected = "trend"
+              ),
               actionButton("activeButton", "Analyze")
             ),
             conditionalPanel(
@@ -337,7 +355,7 @@ body = dashboardBody(tabItems(
               )
             )
           )),
-
+  
   # TAB - REACTIVE ENERGY
   tabItem(tabName = "tabReactiveEnergy",
           fluidRow(
