@@ -18,6 +18,7 @@ createNeuralModel <- function(data, inputs, split) {
   
   train_scaled = data_scaled[1:split, ]   # trenovacia mnozina
 
+  message("Creating model with inputs: ", inputs)
   library(neuralnet)
   nn = neuralnet(paste("load ~", paste(inputs, collapse = " + ")), data = train_scaled, hidden = c(5), threshold = 0.01, stepmax = 1e+6, algorithm = 'rprop+', learningrate.limit = c(10^(-6), 50), learningrate.factor = list(minus = 0.5, plus = 1.2), err.fct = 'sse', act.fct = "logistic", linear.output = TRUE, lifesign = 'full')
   return(nn)
@@ -43,9 +44,11 @@ computeANN <- function(nn, data, inputs, split){
   return(computed)
 }
 
-createGamModel <- function(data){
+createGamModel <- function(data, baseVariable, additionalVariable){
   library(mgcv)
-  model = gamm(load ~ s(day, bs = "cc", k = 7) + s(temperature), data = data)
+  print(baseVariable)
+  print(additionalVariable)
+  model = gamm(data$load ~ s(data[,c(baseVariable)], bs = "cc", k = 7) + s(data[,c(additionalVariable)]))
   layout(matrix(1:2, ncol = 2))
   plot(model$gam, shade=TRUE, shade.col="lightblue", pch=19, cex=0.75)
   plot = layout(1)

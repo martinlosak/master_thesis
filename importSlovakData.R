@@ -34,7 +34,7 @@ processingSlovakEnergy <- function() {
   library(lubridate)
   energy$day = ifelse(wday(energy$datetime)==1,7,wday(energy$datetime)-1)
   
-  # vypocer prazdnin
+  # vypocet prazdnin
   holidays <- dbSelect("SELECT * FROM slovakia_holiday")
   holidays$date <- as.Date(holidays$date)
   energy$holiday <- ifelse(energy$date %in% holidays$date, 1, 0)

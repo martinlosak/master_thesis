@@ -7,7 +7,7 @@ source("scriptCzechData.R")
 
 shinyServer(function(input, output) {
   
-  ## CORRELATION TAB ##
+  # Correlation
   observeEvent(input$correlationButton, {
     dbTable = input$dbTable
     if(input$dbTable == "sr_bratislava" || input$dbTable == "sr_zilina"){
@@ -47,13 +47,13 @@ shinyServer(function(input, output) {
     output$regionCorrelationPlot = renderPlot({regionCorrelationChart(correlatedRegions) })
   })
   
-  ## GAM ##
+  # General Additive Models
   observeEvent(input$gamButton, {
-    inputs = c("time","day","holiday","sun","temperature","pressure","wind","humidity","rainfall")
-    data = getValues(input$nDateRange[1], input$nDateRange[2], inputs, "sr_bratislava")
+    inputs = c("time","day","holiday","season","sun","temperature","pressure","wind","humidity","rainfall")
+    data = getValues(input$gamDateRange[1], input$gamDateRange[2], inputs, "sr_bratislava")
     
     output$gamPlot = renderPlot({
-      createGamModel(data)
+      createGamModel(data, input$baseVariable, input$additionalVariable)
     })
   })
   
@@ -66,6 +66,7 @@ shinyServer(function(input, output) {
     })
     
     observeEvent(input$nnModelButton, {
+      library(plyr)
       split = round_any(input$split*nrow(data)/100, 96, floor)
       output$neural = renderPrint({
         nn <<- createNeuralModel(data, input$nInputs, split)
@@ -98,6 +99,8 @@ shinyServer(function(input, output) {
   observeEvent(input$activeButton, {
     summary = consumptionBy(input$typeOfAggregation, input$clusteringType)
 
+    conditionalStyle = NULL
+    
     if(input$typeOfAggregation == "shift") {
       conditionalStyle = 'function(row, data) {
       if (data[1] >= 30) {
@@ -118,8 +121,28 @@ shinyServer(function(input, output) {
         $("td:eq(3)", row).css("color", "red");
       }
     }'
-    } else {
-      conditionalStyle = NULL
+    }
+
+    if(input$typeOfAggregation == "day"){
+      conditionalStyle = 'function(row, data) {
+      if (data[1] >= 30) {
+        $("td:eq(1)", row).css("color", "green");
+      } else {
+        $("td:eq(1)", row).css("color", "red");
+      }
+      
+      if (data[2] >= 30) {
+        $("td:eq(2)", row).css("color", "green");
+      } else {
+        $("td:eq(12)", row).css("color", "red");
+      }
+      
+      if (data[3] >= 30) {
+        $("td:eq(3)", row).css("color", "green");
+      } else {
+        $("td:eq(3)", row).css("color", "red");
+      }
+    }'
     }
     
 

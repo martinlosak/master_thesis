@@ -170,7 +170,7 @@ body = dashboardBody(tabItems(
               solidHeader = TRUE,
               collapsible = TRUE,
               dateRangeInput(
-                "dateRange",
+                "gamDateRange",
                 label = "Choose period:",
                 start = "2014-07-01",
                 end = "2014-07-31",
@@ -180,6 +180,36 @@ body = dashboardBody(tabItems(
                 weekstart = 1,
                 separator = " to "
               ),
+              fluidRow(column(
+                6,
+                radioButtons(
+                  inputId = "baseVariable",
+                  label = h3("Base variable"),
+                  choices = list("Day" = "day",
+                                 "Temperature" = "temperature"),
+                  selected = "day"
+                )
+              ),
+              column(
+                6,
+                radioButtons(
+                  inputId = "additionalVariable",
+                  label = h3("Additional variable"),
+                  choices = list(
+                    "Time" = "time",
+                    "Day" = "day",
+                    "Holiday" = "holiday",
+                    "Season" = "season",
+                    "Temperature" = "temperature",
+                    "Pressure" = "pressure",
+                    "Wind" = "wind",
+                    "Humidity" = "humidity",
+                    "Rainfall" = "rainfall",
+                    "Sun" = "sun"
+                  ),
+                  selected = "temperature"
+                )
+              )),
               actionButton("gamButton", "Analyze")
             ),
             conditionalPanel(
@@ -231,24 +261,26 @@ body = dashboardBody(tabItems(
           "nInputs",
           label = "Choose inputs to ANN:",
           choices = list(
-            "load(w,d,h-1)" = "load_h1",
-            "load(w,d,h-2)" = "load_h2",
-            "load(w,d,h-3)" = "load_h3",
-            "load(w,d-1,h)" = "load_d1",
-            "load(w,d-1,h-1)" = "load_d1h1",
-            "load(w,d-1,h-2)" = "load_d1h2",
-            "load(w,d-1,h-3)" = "load_d1h3",
-            "load(w-1,d,h)" = "load_w1",
-            "time" = "time",
-            "day" = "day",
-            "holiday" = "holiday",
-            "season" = "season",
-            "sun" = "sun",
-            "temperature" = "temperature",
-            "pressure" = "pressure",
-            "wind" = "wind",
-            "humidity" = "humidity",
-            "rainfall" = "rainfall"
+            "Load(w,d,h-1)" = "load_h1",
+            "Load(w,d,h-2)" = "load_h2",
+            "Load(w,d,h-3)" = "load_h3",
+            "Load(w,d-1,h)" = "load_d1",
+            "Load(w,d-1,h-1)" = "load_d1h1",
+            "Load(w,d-1,h-2)" = "load_d1h2",
+            "Load(w,d-1,h-3)" = "load_d1h3",
+            "Load(w-1,d,h)" = "load_w1",
+            "Time" = "time",
+            "Day" = "day",
+            "Holiday" = "holiday",
+            "Season" = "season",
+            "Temperature" = "temperature",
+            "Pressure" = "pressure",
+            "Wind" = "wind",
+            "Humidity" = "humidity",
+            "Rainfall" = "rainfall",
+            "Sun (only SR)" = "sun",
+            "Cloud (only TX)" = "cloud",
+            "Dewpoint (only TX)" = "dewpoint"
           ),
           selected = c("load_h1", "time", "day", "temperature")
         ),

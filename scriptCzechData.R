@@ -23,7 +23,6 @@ createSummary <- function(path = "processed/cz/load_01_2017") {
 
 # created: 8 clusters by average active power (january 2017)
 createAvgActiveClusters <- function(path = "processed/cz/load_01_2017"){
-  path = "processed/cz/load_01_2017"
   files = list.files(path)
   
   clusterCount = 8
@@ -82,7 +81,6 @@ createAvgActiveClusters <- function(path = "processed/cz/load_01_2017"){
 
 #created: kmeans clusters by hourly average active consumption
 kmeanshourlyAvgSummary <- function(path = "processed/cz/load_01_2017"){
-  path = "processed/cz/load_01_2017"
   summary = data.frame()
 
   fullNameFiles = list.files(path, full.names = TRUE)

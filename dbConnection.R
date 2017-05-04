@@ -26,6 +26,12 @@ dbSelect <- function(query){
 	return(result)
 }
 
+dbWrite <- function(data, tableName){
+	con = getConnection()
+	dbWriteTable(con, name = tableName, value = data, append = TRUE, row.names = FALSE)
+	dbDisconnect(con)
+}
+
 getTableName <- function(keyName) {
 	query = sprintf("SELECT * FROM slovakia_mapper WHERE key_name = '%s'", keyName)
 	result = dbSelect(query)
