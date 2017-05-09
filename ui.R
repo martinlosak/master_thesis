@@ -185,8 +185,18 @@ body = dashboardBody(tabItems(
                 radioButtons(
                   inputId = "baseVariable",
                   label = h3("Base variable"),
-                  choices = list("Day" = "day",
-                                 "Temperature" = "temperature"),
+                  choices = list(
+                    "Time" = "time",
+                    "Day" = "day",
+                    "Holiday" = "holiday",
+                    "Season" = "season",
+                    "Temperature" = "temperature",
+                    "Pressure" = "pressure",
+                    "Wind" = "wind",
+                    "Humidity" = "humidity",
+                    "Rainfall" = "rainfall",
+                    "Sun" = "sun"
+                  ),
                   selected = "day"
                 )
               ),

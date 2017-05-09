@@ -46,8 +46,6 @@ computeANN <- function(nn, data, inputs, split){
 
 createGamModel <- function(data, baseVariable, additionalVariable){
   library(mgcv)
-  print(baseVariable)
-  print(additionalVariable)
   model = gamm(data$load ~ s(data[,c(baseVariable)], bs = "cc", k = 7) + s(data[,c(additionalVariable)]))
   layout(matrix(1:2, ncol = 2))
   plot(model$gam, shade=TRUE, shade.col="lightblue", pch=19, cex=0.75)
