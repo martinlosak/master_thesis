@@ -39,11 +39,11 @@ body = dashboardBody(tabItems(
                 inputId = "dbTable",
                 label = "Choose region:",
                 choices = list(
+                  "Texas residential data" = "texas",
                   "Bratislava - industry data" = "sr_bratislava",
                   "Zilina - industry data" = "sr_zilina",
                   "Kosice - industry data" = "sr_kosice",
-                  "Poprad - industry data" = "sr_poprad",
-                  "Texas residential data" = "texas"
+                  "Poprad - industry data" = "sr_poprad"
                 )
               ),
               dateRangeInput(
@@ -58,8 +58,8 @@ body = dashboardBody(tabItems(
               selectInput(
                 inputId = "corrMethod",
                 label = "Choose correlation method:",
-                choices = list("Pearson" = "pearson",
-                               "Spearman" = "spearman")
+                choices = list("Spearman" = "spearman",
+                               "Pearson" = "pearson")
               ),
               
               actionButton("correlationButton", "Analyze")
@@ -102,7 +102,7 @@ body = dashboardBody(tabItems(
                 "Kosice" = "KE",
                 "Poprad" = "PP"
               ),
-              selected = c("BA", "ZA")
+              selected = c("BA", "ZA", "KE", "PP")
             )
           ),
           
@@ -112,9 +112,6 @@ body = dashboardBody(tabItems(
               inputId = "variables",
               label = "Choose variables:",
               choices = list(
-                "Time" = "time",
-                "Day" = "day",
-                "Holiday" = "holiday",
                 "Sun" = "sun",
                 "Temperature" = "temperature",
                 "Pressure" = "pressure",
@@ -122,7 +119,7 @@ body = dashboardBody(tabItems(
                 "Humidity" = "humidity",
                 "Rainfall" = "rainfall"
               ),
-              selected = c("holiday", "sun", "temperature", "wind", "humidity")
+              selected = c("sun", "temperature", "pressure", "wind", "humidity", "rainfall")
             )
           ),
           column(
@@ -139,8 +136,9 @@ body = dashboardBody(tabItems(
             selectInput(
               "regionCorrMethod",
               "Choose correlation method:",
-              choices = list("Pearson" = "pearson",
-                             "Spearman" = "spearman")
+              choices = list("Spearman" = "spearman",
+                             "Pearson" = "pearson"
+                             )
             ),
             
             actionButton("regionCorrelationButton", "Analyze")
@@ -248,11 +246,11 @@ body = dashboardBody(tabItems(
           "nDatabase",
           "Choose database:",
           choices = list(
+            "Texas residential data" = "texas",
             "Bratislava - industry data" = "sr_bratislava",
             "Zilina - industry data" = "sr_zilina",
             "Kosice - industry data" = "sr_kosice",
-            "Poprad - industry data" = "sr_poprad",
-            "Texas residential data" = "texas"
+            "Poprad - industry data" = "sr_poprad"
           )
         ),
         dateRangeInput(
@@ -292,7 +290,7 @@ body = dashboardBody(tabItems(
             "Cloud (only TX)" = "cloud",
             "Dewpoint (only TX)" = "dewpoint"
           ),
-          selected = c("load_h1", "time", "day", "temperature")
+          selected = c("load_d1", "load_w1", "time", "day", "holiday", "temperature", "humidity")
         ),
         actionButton("nnButton", "Load data")
       ),
@@ -369,9 +367,9 @@ body = dashboardBody(tabItems(
                 "typeOfAggregation",
                 "Type of aggregation:",
                 choices = list(
-                  "Hourly" = "hour",
                   "Daily" = "day",
-                  "Shiftly" = "shift"
+                  "Shiftly" = "shift",
+                  "Hourly" = "hour"
                 )
               ),
               radioButtons(

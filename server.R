@@ -10,10 +10,10 @@ shinyServer(function(input, output) {
   # Correlation
   observeEvent(input$correlationButton, {
     dbTable = input$dbTable
-    if(input$dbTable == "sr_bratislava" || input$dbTable == "sr_zilina"){
-      inputs = c("time","day","holiday","sun","temperature","pressure","wind","humidity","rainfall")
+    if(input$dbTable == "sr_bratislava" || input$dbTable == "sr_zilina"|| input$dbTable == "sr_kosice"|| input$dbTable == "sr_poprad"){
+      inputs = c("sun","temperature","pressure","wind","humidity","rainfall")
     } else {
-      inputs = c("day","holiday","cloud","temperature","pressure","wind","humidity","rainfall","dewpoint")
+      inputs = c("cloud","temperature","pressure","wind","humidity","dewpoint")
     }
     
     # 
@@ -101,49 +101,7 @@ shinyServer(function(input, output) {
 
     conditionalStyle = NULL
     
-    if(input$typeOfAggregation == "shift") {
-      conditionalStyle = 'function(row, data) {
-      if (data[1] >= 30) {
-        $("td:eq(1)", row).css("color", "green");
-      } else {
-        $("td:eq(1)", row).css("color", "red");
-      }
-      
-      if (data[2] >= 30) {
-        $("td:eq(2)", row).css("color", "green");
-      } else {
-        $("td:eq(12)", row).css("color", "red");
-      }
-      
-      if (data[3] >= 30) {
-        $("td:eq(3)", row).css("color", "green");
-      } else {
-        $("td:eq(3)", row).css("color", "red");
-      }
-    }'
-    }
 
-    if(input$typeOfAggregation == "day"){
-      conditionalStyle = 'function(row, data) {
-      if (data[1] >= 30) {
-        $("td:eq(1)", row).css("color", "green");
-      } else {
-        $("td:eq(1)", row).css("color", "red");
-      }
-      
-      if (data[2] >= 30) {
-        $("td:eq(2)", row).css("color", "green");
-      } else {
-        $("td:eq(12)", row).css("color", "red");
-      }
-      
-      if (data[3] >= 30) {
-        $("td:eq(3)", row).css("color", "green");
-      } else {
-        $("td:eq(3)", row).css("color", "red");
-      }
-    }'
-    }
     
 
     output$activeTable = renderDataTable(summary, options = list(rowCallback = DT::JS(conditionalStyle),
